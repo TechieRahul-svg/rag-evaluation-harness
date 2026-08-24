@@ -1,0 +1,4103 @@
+{
+    "fixed": {
+        "before": {
+            "hit_at_1": 0.54,
+            "hit_at_3": 0.84,
+            "hit_at_5": 0.9
+        },
+        "after": {
+            "hit_at_1": 0.7,
+            "hit_at_3": 0.9,
+            "hit_at_5": 0.94
+        },
+        "per_question": [
+            {
+                "question_id": 1,
+                "question": "How does dependency injection work in FastAPI?",
+                "expected_sources": [
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "features.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/testing-dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 2,
+                "question": "What does FastAPI's Depends function do?",
+                "expected_sources": [
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "advanced/advanced-dependencies.md",
+                    "reference/dependencies.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "reference/dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/security/first-steps.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 3,
+                "question": "How can a Python class be used as a dependency in FastAPI?",
+                "expected_sources": [
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/security/first-steps.md",
+                    "reference/dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 4,
+                "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
+                "expected_sources": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_before": [
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/security/first-steps.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 5,
+                "question": "How does FastAPI support asynchronous path operation functions?",
+                "expected_sources": [
+                    "async.md"
+                ],
+                "sources_before": [
+                    "async.md",
+                    "async.md",
+                    "async.md",
+                    "async.md",
+                    "advanced/dataclasses.md"
+                ],
+                "sources_after": [
+                    "advanced/dataclasses.md",
+                    "async.md",
+                    "async.md",
+                    "tutorial/stream-json-lines.md",
+                    "advanced/path-operation-advanced-configuration.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 6,
+                "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
+                "expected_sources": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md"
+                ],
+                "sources_before": [
+                    "advanced/dataclasses.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/dependencies/index.md",
+                    "python-types.md"
+                ],
+                "sources_after": [
+                    "advanced/using-request-directly.md",
+                    "tutorial/path-params.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params-numeric-validations.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 7,
+                "question": "How does FastAPI handle request bodies using Pydantic models?",
+                "expected_sources": [
+                    "tutorial/body.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/body.md",
+                    "advanced/dataclasses.md",
+                    "advanced/using-request-directly.md",
+                    "advanced/response-directly.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/body.md",
+                    "tutorial/body.md",
+                    "tutorial/request-form-models.md",
+                    "advanced/dataclasses.md",
+                    "tutorial/body.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 8,
+                "question": "How does FastAPI use response_model to filter output data and prevent sensitive fields like passwords from leaking in API responses?",
+                "expected_sources": [
+                    "tutorial/response-model.md"
+                ],
+                "sources_before": [
+                    "tutorial/response-model.md",
+                    "tutorial/response-model.md",
+                    "advanced/response-headers.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-directly.md"
+                ],
+                "sources_after": [
+                    "tutorial/response-model.md",
+                    "tutorial/response-model.md",
+                    "advanced/response-headers.md",
+                    "advanced/response-change-status-code.md",
+                    "tutorial/response-model.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 9,
+                "question": "How does FastAPI use OAuth2PasswordBearer for authentication?",
+                "expected_sources": [
+                    "tutorial/security/first-steps.md"
+                ],
+                "sources_before": [
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/first-steps.md",
+                    "advanced/security/oauth2-scopes.md"
+                ],
+                "sources_after": [
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 10,
+                "question": "How can multiple worker processes be used when running a FastAPI application?",
+                "expected_sources": [
+                    "deployment/server-workers.md"
+                ],
+                "sources_before": [
+                    "deployment/docker.md",
+                    "deployment/docker.md",
+                    "deployment/server-workers.md",
+                    "tutorial/middleware.md",
+                    "deployment/server-workers.md"
+                ],
+                "sources_after": [
+                    "deployment/server-workers.md",
+                    "deployment/docker.md",
+                    "deployment/server-workers.md",
+                    "deployment/server-workers.md",
+                    "deployment/concepts.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 11,
+                "question": "How do you add middleware to a FastAPI application using @app.middleware to process every request and response?",
+                "expected_sources": [
+                    "tutorial/middleware.md"
+                ],
+                "sources_before": [
+                    "tutorial/middleware.md",
+                    "advanced/middleware.md",
+                    "tutorial/middleware.md",
+                    "advanced/middleware.md",
+                    "tutorial/cors.md"
+                ],
+                "sources_after": [
+                    "tutorial/middleware.md",
+                    "tutorial/middleware.md",
+                    "tutorial/middleware.md",
+                    "tutorial/middleware.md",
+                    "tutorial/cors.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 12,
+                "question": "How do BackgroundTasks work in FastAPI to run tasks like sending emails after returning an HTTP response?",
+                "expected_sources": [
+                    "tutorial/background-tasks.md"
+                ],
+                "sources_before": [
+                    "reference/background.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_after": [
+                    "reference/background.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 13,
+                "question": "How do you raise an HTTPException with a custom status code and detail message in FastAPI to return error responses?",
+                "expected_sources": [
+                    "tutorial/handling-errors.md"
+                ],
+                "sources_before": [
+                    "tutorial/handling-errors.md",
+                    "tutorial/handling-errors.md",
+                    "tutorial/response-status-code.md",
+                    "deployment/concepts.md",
+                    "advanced/additional-status-codes.md"
+                ],
+                "sources_after": [
+                    "tutorial/handling-errors.md",
+                    "reference/exceptions.md",
+                    "tutorial/handling-errors.md",
+                    "tutorial/handling-errors.md",
+                    "advanced/additional-status-codes.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 14,
+                "question": "How do you configure CORS in FastAPI using CORSMiddleware to allow cross-origin requests from a browser?",
+                "expected_sources": [
+                    "tutorial/cors.md"
+                ],
+                "sources_before": [
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "advanced/middleware.md"
+                ],
+                "sources_after": [
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 15,
+                "question": "How do you add extra validation to query parameters in FastAPI using Query with min_length, max_length, and pattern constraints?",
+                "expected_sources": [
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 16,
+                "question": "How do you declare and read cookie parameters in a FastAPI path operation function using Cookie()?",
+                "expected_sources": [
+                    "tutorial/cookie-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/cookie-params.md",
+                    "tutorial/cookie-param-models.md",
+                    "advanced/using-request-directly.md",
+                    "reference/parameters.md",
+                    "tutorial/header-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/cookie-params.md",
+                    "tutorial/cookie-param-models.md",
+                    "reference/response.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-cookies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 17,
+                "question": "How do you declare HTTP header parameters in FastAPI using Header(), and how does the convert_underscores option control underscore to hyphen conversion?",
+                "expected_sources": [
+                    "tutorial/header-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-params.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/header-params.md",
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-params.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "advanced/response-headers.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 18,
+                "question": "How do you serve static files like CSS, JavaScript, and images in a FastAPI application using StaticFiles?",
+                "expected_sources": [
+                    "tutorial/static-files.md"
+                ],
+                "sources_before": [
+                    "reference/staticfiles.md",
+                    "tutorial/static-files.md",
+                    "tutorial/static-files.md",
+                    "advanced/templates.md",
+                    "tutorial/static-files.md"
+                ],
+                "sources_after": [
+                    "reference/staticfiles.md",
+                    "advanced/templates.md",
+                    "tutorial/static-files.md",
+                    "tutorial/static-files.md",
+                    "tutorial/frontend.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 19,
+                "question": "How do you write automated tests for FastAPI path operations using TestClient from starlette?",
+                "expected_sources": [
+                    "tutorial/testing.md"
+                ],
+                "sources_before": [
+                    "tutorial/first-steps.md",
+                    "tutorial/testing.md",
+                    "deployment/versions.md",
+                    "advanced/async-tests.md",
+                    "advanced/using-request-directly.md"
+                ],
+                "sources_after": [
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/testing.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 20,
+                "question": "How do nested sub-dependencies work in FastAPI where a dependable function itself declares a Depends() on another dependable, and how does use_cache control whether a dependency is called multiple times?",
+                "expected_sources": [
+                    "tutorial/dependencies/sub-dependencies.md"
+                ],
+                "sources_before": [
+                    "advanced/advanced-dependencies.md",
+                    "async.md",
+                    "tutorial/dependencies/sub-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "reference/dependencies.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/sub-dependencies.md",
+                    "tutorial/dependencies/sub-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "async.md",
+                    "advanced/security/oauth2-scopes.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 21,
+                "question": "How do you define nested Pydantic models in FastAPI to validate complex JSON payloads?",
+                "expected_sources": [
+                    "tutorial/body-nested-models.md"
+                ],
+                "sources_before": [
+                    "advanced/additional-responses.md",
+                    "advanced/additional-responses.md",
+                    "advanced/dataclasses.md",
+                    "advanced/response-directly.md",
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/body-nested-models.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "features.md",
+                    "tutorial/stream-json-lines.md",
+                    "advanced/additional-responses.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 22,
+                "question": "What are the advantages of using jsonable_encoder in FastAPI before saving data to a database?",
+                "expected_sources": [
+                    "tutorial/encoder.md"
+                ],
+                "sources_before": [
+                    "reference/encoders.md",
+                    "tutorial/encoder.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md"
+                ],
+                "sources_after": [
+                    "tutorial/encoder.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 23,
+                "question": "How do you declare optional query parameters with default values in FastAPI?",
+                "expected_sources": [
+                    "tutorial/query-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-params.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 24,
+                "question": "How do you handle file uploads in FastAPI using File and UploadFile?",
+                "expected_sources": [
+                    "tutorial/request-files.md"
+                ],
+                "sources_before": [
+                    "reference/uploadfile.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "advanced/additional-responses.md"
+                ],
+                "sources_after": [
+                    "reference/uploadfile.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 25,
+                "question": "How can you combine both Form fields and Files in the same FastAPI path operation?",
+                "expected_sources": [
+                    "tutorial/request-forms-and-files.md"
+                ],
+                "sources_before": [
+                    "tutorial/request-files.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-files.md",
+                    "reference/uploadfile.md",
+                    "tutorial/request-files.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-files.md",
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-form-models.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 26,
+                "question": "How do you declare cookie parameter models using Pydantic in FastAPI?",
+                "expected_sources": [
+                    "tutorial/cookie-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/cookie-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 27,
+                "question": "How do you declare header parameter models in FastAPI using Pydantic?",
+                "expected_sources": [
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/body.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "advanced/dataclasses.md"
+                ],
+                "sources_after": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 28,
+                "question": "How do you define path operation configuration metadata like summary, description, and tags?",
+                "expected_sources": [
+                    "tutorial/path-operation-configuration.md"
+                ],
+                "sources_before": [
+                    "tutorial/metadata.md",
+                    "tutorial/path-operation-configuration.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/first-steps.md"
+                ],
+                "sources_after": [
+                    "tutorial/metadata.md",
+                    "tutorial/metadata.md",
+                    "tutorial/path-operation-configuration.md",
+                    "tutorial/path-operation-configuration.md",
+                    "tutorial/path-operation-configuration.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 29,
+                "question": "How do you configure a path operation to return a custom HTTP status code?",
+                "expected_sources": [
+                    "tutorial/response-status-code.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/custom-response.md",
+                    "tutorial/response-status-code.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/response-change-status-code.md"
+                ],
+                "sources_after": [
+                    "advanced/additional-status-codes.md",
+                    "advanced/custom-response.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/custom-response.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            },
+            {
+                "question_id": 30,
+                "question": "How do you perform database operations in FastAPI using SQL Databases and SQLAlchemy?",
+                "expected_sources": [
+                    "tutorial/sql-databases.md"
+                ],
+                "sources_before": [
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/security/oauth2-jwt.md",
+                    "features.md"
+                ],
+                "sources_after": [
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/first-steps.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 31,
+                "question": "How do you define a global dependency in a FastAPI application?",
+                "expected_sources": [
+                    "tutorial/dependencies/global-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 32,
+                "question": "How do dependencies with yield work in FastAPI, and what is their relationship to context managers?",
+                "expected_sources": [
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 33,
+                "question": "How do you use the dependencies parameter in path operation decorators like @app.get or @app.post?",
+                "expected_sources": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/first-steps.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 34,
+                "question": "How do you structure a larger FastAPI application using APIRouter?",
+                "expected_sources": [
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_before": [
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_after": [
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 35,
+                "question": "How do you manage settings and configuration in FastAPI using Pydantic Settings?",
+                "expected_sources": [
+                    "advanced/settings.md"
+                ],
+                "sources_before": [
+                    "advanced/settings.md",
+                    "advanced/dataclasses.md",
+                    "deployment/versions.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "advanced/settings.md"
+                ],
+                "sources_after": [
+                    "advanced/settings.md",
+                    "advanced/settings.md",
+                    "advanced/settings.md",
+                    "features.md",
+                    "advanced/dataclasses.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 36,
+                "question": "How does FastAPI support WebSocket communication, and how do you write a route for it?",
+                "expected_sources": [
+                    "advanced/websockets.md"
+                ],
+                "sources_before": [
+                    "reference/websockets.md",
+                    "reference/fastapi.md",
+                    "reference/apirouter.md",
+                    "advanced/websockets.md",
+                    "reference/request.md"
+                ],
+                "sources_after": [
+                    "advanced/websockets.md",
+                    "reference/websockets.md",
+                    "advanced/websockets.md",
+                    "advanced/websockets.md",
+                    "reference/httpconnection.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 37,
+                "question": "How do you define custom responses in FastAPI to return custom headers, XML, or HTML content?",
+                "expected_sources": [
+                    "advanced/custom-response.md"
+                ],
+                "sources_before": [
+                    "advanced/custom-response.md",
+                    "advanced/response-directly.md",
+                    "reference/response.md",
+                    "advanced/response-headers.md",
+                    "advanced/response-headers.md"
+                ],
+                "sources_after": [
+                    "advanced/custom-response.md",
+                    "reference/responses.md",
+                    "advanced/response-directly.md",
+                    "reference/response.md",
+                    "advanced/response-headers.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 38,
+                "question": "How do you configure a FastAPI application behind a proxy server (like Nginx, Traefik, or load balancers) with the root_path parameter?",
+                "expected_sources": [
+                    "advanced/behind-a-proxy.md"
+                ],
+                "sources_before": [
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md"
+                ],
+                "sources_after": [
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 39,
+                "question": "How do you define sub-applications in FastAPI to mount another independent ASGI app under a specific path?",
+                "expected_sources": [
+                    "advanced/sub-applications.md"
+                ],
+                "sources_before": [
+                    "advanced/sub-applications.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md"
+                ],
+                "sources_after": [
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 40,
+                "question": "How do you handle lifetime events (startup and shutdown) in FastAPI using a lifespan context manager?",
+                "expected_sources": [
+                    "advanced/events.md"
+                ],
+                "sources_before": [
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "sources_after": [
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/testing-events.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 41,
+                "question": "How can you override dependencies for testing in FastAPI?",
+                "expected_sources": [
+                    "advanced/testing-dependencies.md"
+                ],
+                "sources_before": [
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md"
+                ],
+                "sources_after": [
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 42,
+                "question": "How do you use Jinja2 templates in FastAPI?",
+                "expected_sources": [
+                    "advanced/templates.md"
+                ],
+                "sources_before": [
+                    "reference/templating.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md"
+                ],
+                "sources_after": [
+                    "advanced/templates.md",
+                    "reference/templating.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 43,
+                "question": "How do you configure additional JSON schemas/examples for Pydantic models in OpenAPI documentation?",
+                "expected_sources": [
+                    "tutorial/schema-extra-example.md"
+                ],
+                "sources_before": [
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "advanced/additional-responses.md"
+                ],
+                "sources_after": [
+                    "tutorial/schema-extra-example.md",
+                    "advanced/additional-responses.md",
+                    "advanced/additional-responses.md",
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 44,
+                "question": "How do you retrieve request headers directly in your path operation function in FastAPI?",
+                "expected_sources": [
+                    "tutorial/header-params.md"
+                ],
+                "sources_before": [
+                    "advanced/using-request-directly.md",
+                    "reference/parameters.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/body.md",
+                    "reference/response.md"
+                ],
+                "sources_after": [
+                    "reference/parameters.md",
+                    "advanced/using-request-directly.md",
+                    "advanced/using-request-directly.md",
+                    "reference/response.md",
+                    "advanced/additional-status-codes.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            },
+            {
+                "question_id": 45,
+                "question": "How do you write asynchronous tests in FastAPI using HTTPX and pytest?",
+                "expected_sources": [
+                    "advanced/async-tests.md"
+                ],
+                "sources_before": [
+                    "tutorial/testing.md",
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md"
+                ],
+                "sources_after": [
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md",
+                    "advanced/async-tests.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 46,
+                "question": "How do you set response cookies directly inside your path operation functions in FastAPI?",
+                "expected_sources": [
+                    "advanced/response-cookies.md"
+                ],
+                "sources_before": [
+                    "reference/response.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-cookies.md",
+                    "advanced/using-request-directly.md",
+                    "reference/responses.md"
+                ],
+                "sources_after": [
+                    "reference/response.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-cookies.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 47,
+                "question": "How do you set response headers directly inside your path operation functions in FastAPI?",
+                "expected_sources": [
+                    "advanced/response-headers.md"
+                ],
+                "sources_before": [
+                    "reference/response.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/response-model.md"
+                ],
+                "sources_after": [
+                    "reference/response.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-headers.md",
+                    "advanced/response-headers.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 48,
+                "question": "How do you define a query parameter model in FastAPI using Pydantic?",
+                "expected_sources": [
+                    "tutorial/query-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/body.md",
+                    "tutorial/query-param-models.md",
+                    "advanced/dataclasses.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/body.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 49,
+                "question": "How do you declare Form fields in FastAPI using Form parameters?",
+                "expected_sources": [
+                    "tutorial/request-forms.md"
+                ],
+                "sources_before": [
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "tutorial/request-forms.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-forms.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-form-models.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 50,
+                "question": "How does path parameter type validation work in FastAPI when a value cannot be parsed?",
+                "expected_sources": [
+                    "tutorial/path-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "python-types.md",
+                    "tutorial/body-multiple-params.md",
+                    "advanced/using-request-directly.md"
+                ],
+                "sources_after": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/body.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            }
+        ]
+    },
+    "recursive": {
+        "before": {
+            "hit_at_1": 0.44,
+            "hit_at_3": 0.82,
+            "hit_at_5": 0.9
+        },
+        "after": {
+            "hit_at_1": 0.64,
+            "hit_at_3": 0.88,
+            "hit_at_5": 0.94
+        },
+        "per_question": [
+            {
+                "question_id": 1,
+                "question": "How does dependency injection work in FastAPI?",
+                "expected_sources": [
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "features.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 2,
+                "question": "What does FastAPI's Depends function do?",
+                "expected_sources": [
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "reference/dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/first-steps.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/index.md",
+                    "reference/dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 3,
+                "question": "How can a Python class be used as a dependency in FastAPI?",
+                "expected_sources": [
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "reference/dependencies.md",
+                    "reference/fastapi.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/advanced-dependencies.md",
+                    "advanced/testing-dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 4,
+                "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
+                "expected_sources": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_after": [
+                    "advanced/advanced-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 5,
+                "question": "How does FastAPI support asynchronous path operation functions?",
+                "expected_sources": [
+                    "async.md"
+                ],
+                "sources_before": [
+                    "async.md",
+                    "async.md",
+                    "tutorial/first-steps.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "async.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/generate-clients.md",
+                    "advanced/dataclasses.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 6,
+                "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
+                "expected_sources": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/query-params.md",
+                    "advanced/generate-clients.md",
+                    "tutorial/body-multiple-params.md",
+                    "advanced/dataclasses.md"
+                ],
+                "sources_after": [
+                    "advanced/using-request-directly.md",
+                    "tutorial/query-params.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md",
+                    "tutorial/path-params-numeric-validations.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 7,
+                "question": "How does FastAPI handle request bodies using Pydantic models?",
+                "expected_sources": [
+                    "tutorial/body.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/body.md",
+                    "tutorial/body.md",
+                    "advanced/dataclasses.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/body.md"
+                ],
+                "sources_after": [
+                    "tutorial/body.md",
+                    "tutorial/body.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/security/get-current-user.md",
+                    "advanced/dataclasses.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 8,
+                "question": "How does FastAPI use response_model to filter output data and prevent sensitive fields like passwords from leaking in API responses?",
+                "expected_sources": [
+                    "tutorial/response-model.md"
+                ],
+                "sources_before": [
+                    "tutorial/response-model.md",
+                    "advanced/response-headers.md",
+                    "advanced/response-change-status-code.md",
+                    "tutorial/response-model.md",
+                    "advanced/response-directly.md"
+                ],
+                "sources_after": [
+                    "tutorial/response-model.md",
+                    "tutorial/response-model.md",
+                    "advanced/response-headers.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-change-status-code.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 9,
+                "question": "How does FastAPI use OAuth2PasswordBearer for authentication?",
+                "expected_sources": [
+                    "tutorial/security/first-steps.md"
+                ],
+                "sources_before": [
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "advanced/security/oauth2-scopes.md"
+                ],
+                "sources_after": [
+                    "tutorial/security/first-steps.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/simple-oauth2.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 10,
+                "question": "How can multiple worker processes be used when running a FastAPI application?",
+                "expected_sources": [
+                    "deployment/server-workers.md"
+                ],
+                "sources_before": [
+                    "deployment/docker.md",
+                    "deployment/concepts.md",
+                    "tutorial/background-tasks.md",
+                    "deployment/server-workers.md",
+                    "deployment/server-workers.md"
+                ],
+                "sources_after": [
+                    "deployment/concepts.md",
+                    "deployment/server-workers.md",
+                    "deployment/docker.md",
+                    "deployment/server-workers.md",
+                    "deployment/server-workers.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 11,
+                "question": "How do you add middleware to a FastAPI application using @app.middleware to process every request and response?",
+                "expected_sources": [
+                    "tutorial/middleware.md"
+                ],
+                "sources_before": [
+                    "tutorial/middleware.md",
+                    "advanced/middleware.md",
+                    "reference/middleware.md",
+                    "advanced/middleware.md",
+                    "tutorial/cors.md"
+                ],
+                "sources_after": [
+                    "tutorial/middleware.md",
+                    "tutorial/cors.md",
+                    "tutorial/middleware.md",
+                    "tutorial/middleware.md",
+                    "advanced/middleware.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 12,
+                "question": "How do BackgroundTasks work in FastAPI to run tasks like sending emails after returning an HTTP response?",
+                "expected_sources": [
+                    "tutorial/background-tasks.md"
+                ],
+                "sources_before": [
+                    "reference/background.md",
+                    "tutorial/background-tasks.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md"
+                ],
+                "sources_after": [
+                    "reference/background.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 13,
+                "question": "How do you raise an HTTPException with a custom status code and detail message in FastAPI to return error responses?",
+                "expected_sources": [
+                    "tutorial/handling-errors.md"
+                ],
+                "sources_before": [
+                    "tutorial/handling-errors.md",
+                    "tutorial/handling-errors.md",
+                    "tutorial/handling-errors.md",
+                    "deployment/concepts.md",
+                    "tutorial/response-status-code.md"
+                ],
+                "sources_after": [
+                    "tutorial/handling-errors.md",
+                    "reference/exceptions.md",
+                    "advanced/additional-status-codes.md",
+                    "tutorial/handling-errors.md",
+                    "advanced/custom-response.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 14,
+                "question": "How do you configure CORS in FastAPI using CORSMiddleware to allow cross-origin requests from a browser?",
+                "expected_sources": [
+                    "tutorial/cors.md"
+                ],
+                "sources_before": [
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "advanced/middleware.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md"
+                ],
+                "sources_after": [
+                    "tutorial/cors.md",
+                    "tutorial/middleware.md",
+                    "tutorial/cors.md",
+                    "advanced/response-headers.md",
+                    "tutorial/cors.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 15,
+                "question": "How do you add extra validation to query parameters in FastAPI using Query with min_length, max_length, and pattern constraints?",
+                "expected_sources": [
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/path-params-numeric-validations.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 16,
+                "question": "How do you declare and read cookie parameters in a FastAPI path operation function using Cookie()?",
+                "expected_sources": [
+                    "tutorial/cookie-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/cookie-params.md",
+                    "tutorial/cookie-param-models.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/cookie-param-models.md",
+                    "reference/parameters.md"
+                ],
+                "sources_after": [
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/cookie-params.md",
+                    "reference/response.md",
+                    "advanced/response-cookies.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 17,
+                "question": "How do you declare HTTP header parameters in FastAPI using Header(), and how does the convert_underscores option control underscore to hyphen conversion?",
+                "expected_sources": [
+                    "tutorial/header-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/header-params.md",
+                    "tutorial/header-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-params.md",
+                    "tutorial/header-param-models.md",
+                    "advanced/response-headers.md",
+                    "tutorial/header-param-models.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 18,
+                "question": "How do you serve static files like CSS, JavaScript, and images in a FastAPI application using StaticFiles?",
+                "expected_sources": [
+                    "tutorial/static-files.md"
+                ],
+                "sources_before": [
+                    "reference/staticfiles.md",
+                    "tutorial/static-files.md",
+                    "tutorial/static-files.md",
+                    "tutorial/static-files.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_after": [
+                    "reference/staticfiles.md",
+                    "advanced/templates.md",
+                    "tutorial/static-files.md",
+                    "tutorial/frontend.md",
+                    "tutorial/static-files.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 19,
+                "question": "How do you write automated tests for FastAPI path operations using TestClient from starlette?",
+                "expected_sources": [
+                    "tutorial/testing.md"
+                ],
+                "sources_before": [
+                    "features.md",
+                    "tutorial/path-params.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "deployment/versions.md"
+                ],
+                "sources_after": [
+                    "tutorial/testing.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "tutorial/path-params.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 20,
+                "question": "How do nested sub-dependencies work in FastAPI where a dependable function itself declares a Depends() on another dependable, and how does use_cache control whether a dependency is called multiple times?",
+                "expected_sources": [
+                    "tutorial/dependencies/sub-dependencies.md"
+                ],
+                "sources_before": [
+                    "advanced/advanced-dependencies.md",
+                    "async.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/sub-dependencies.md",
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/sub-dependencies.md",
+                    "tutorial/dependencies/sub-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "reference/dependencies.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 21,
+                "question": "How do you define nested Pydantic models in FastAPI to validate complex JSON payloads?",
+                "expected_sources": [
+                    "tutorial/body-nested-models.md"
+                ],
+                "sources_before": [
+                    "advanced/path-operation-advanced-configuration.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/schema-extra-example.md",
+                    "advanced/dataclasses.md",
+                    "advanced/additional-responses.md"
+                ],
+                "sources_after": [
+                    "features.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "advanced/additional-responses.md",
+                    "advanced/custom-response.md",
+                    "advanced/additional-responses.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            },
+            {
+                "question_id": 22,
+                "question": "What are the advantages of using jsonable_encoder in FastAPI before saving data to a database?",
+                "expected_sources": [
+                    "tutorial/encoder.md"
+                ],
+                "sources_before": [
+                    "tutorial/encoder.md",
+                    "reference/encoders.md",
+                    "tutorial/encoder.md",
+                    "advanced/custom-response.md",
+                    "advanced/custom-response.md"
+                ],
+                "sources_after": [
+                    "tutorial/encoder.md",
+                    "tutorial/encoder.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 23,
+                "question": "How do you declare optional query parameters with default values in FastAPI?",
+                "expected_sources": [
+                    "tutorial/query-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params.md",
+                    "tutorial/path-params-numeric-validations.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 24,
+                "question": "How do you handle file uploads in FastAPI using File and UploadFile?",
+                "expected_sources": [
+                    "tutorial/request-files.md"
+                ],
+                "sources_before": [
+                    "reference/uploadfile.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-forms-and-files.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-files.md",
+                    "reference/uploadfile.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 25,
+                "question": "How can you combine both Form fields and Files in the same FastAPI path operation?",
+                "expected_sources": [
+                    "tutorial/request-forms-and-files.md"
+                ],
+                "sources_before": [
+                    "tutorial/request-files.md",
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/path-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-forms.md",
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 26,
+                "question": "How do you declare cookie parameter models using Pydantic in FastAPI?",
+                "expected_sources": [
+                    "tutorial/cookie-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/cookie-params.md",
+                    "tutorial/body.md"
+                ],
+                "sources_after": [
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 27,
+                "question": "How do you declare header parameter models in FastAPI using Pydantic?",
+                "expected_sources": [
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/body.md",
+                    "tutorial/header-param-models.md",
+                    "advanced/dataclasses.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 28,
+                "question": "How do you define path operation configuration metadata like summary, description, and tags?",
+                "expected_sources": [
+                    "tutorial/path-operation-configuration.md"
+                ],
+                "sources_before": [
+                    "tutorial/metadata.md",
+                    "tutorial/metadata.md",
+                    "tutorial/bigger-applications.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/first-steps.md"
+                ],
+                "sources_after": [
+                    "tutorial/metadata.md",
+                    "tutorial/path-operation-configuration.md",
+                    "tutorial/path-operation-configuration.md",
+                    "tutorial/bigger-applications.md",
+                    "advanced/path-operation-advanced-configuration.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 29,
+                "question": "How do you configure a path operation to return a custom HTTP status code?",
+                "expected_sources": [
+                    "tutorial/response-status-code.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/additional-status-codes.md",
+                    "tutorial/response-status-code.md",
+                    "tutorial/response-status-code.md",
+                    "advanced/response-change-status-code.md"
+                ],
+                "sources_after": [
+                    "advanced/additional-status-codes.md",
+                    "advanced/custom-response.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/custom-response.md",
+                    "tutorial/response-status-code.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 30,
+                "question": "How do you perform database operations in FastAPI using SQL Databases and SQLAlchemy?",
+                "expected_sources": [
+                    "tutorial/sql-databases.md"
+                ],
+                "sources_before": [
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/security/oauth2-jwt.md",
+                    "features.md"
+                ],
+                "sources_after": [
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/first-steps.md",
+                    "features.md",
+                    "tutorial/sql-databases.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 31,
+                "question": "How do you define a global dependency in a FastAPI application?",
+                "expected_sources": [
+                    "tutorial/dependencies/global-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 32,
+                "question": "How do dependencies with yield work in FastAPI, and what is their relationship to context managers?",
+                "expected_sources": [
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 33,
+                "question": "How do you use the dependencies parameter in path operation decorators like @app.get or @app.post?",
+                "expected_sources": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_after": [
+                    "tutorial/response-model.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/first-steps.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 34,
+                "question": "How do you structure a larger FastAPI application using APIRouter?",
+                "expected_sources": [
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_before": [
+                    "reference/apirouter.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "deployment/concepts.md"
+                ],
+                "sources_after": [
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 35,
+                "question": "How do you manage settings and configuration in FastAPI using Pydantic Settings?",
+                "expected_sources": [
+                    "advanced/settings.md"
+                ],
+                "sources_before": [
+                    "advanced/dataclasses.md",
+                    "advanced/settings.md",
+                    "tutorial/body.md",
+                    "deployment/versions.md",
+                    "advanced/settings.md"
+                ],
+                "sources_after": [
+                    "advanced/settings.md",
+                    "advanced/settings.md",
+                    "advanced/settings.md",
+                    "tutorial/response-model.md",
+                    "advanced/dataclasses.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 36,
+                "question": "How does FastAPI support WebSocket communication, and how do you write a route for it?",
+                "expected_sources": [
+                    "advanced/websockets.md"
+                ],
+                "sources_before": [
+                    "reference/websockets.md",
+                    "advanced/websockets.md",
+                    "advanced/websockets.md",
+                    "reference/websockets.md",
+                    "reference/websockets.md"
+                ],
+                "sources_after": [
+                    "advanced/websockets.md",
+                    "reference/websockets.md",
+                    "advanced/websockets.md",
+                    "reference/websockets.md",
+                    "reference/websockets.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 37,
+                "question": "How do you define custom responses in FastAPI to return custom headers, XML, or HTML content?",
+                "expected_sources": [
+                    "advanced/custom-response.md"
+                ],
+                "sources_before": [
+                    "advanced/response-directly.md",
+                    "advanced/custom-response.md",
+                    "advanced/custom-response.md",
+                    "reference/responses.md",
+                    "reference/response.md"
+                ],
+                "sources_after": [
+                    "advanced/custom-response.md",
+                    "advanced/response-directly.md",
+                    "reference/responses.md",
+                    "reference/response.md",
+                    "advanced/custom-response.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 38,
+                "question": "How do you configure a FastAPI application behind a proxy server (like Nginx, Traefik, or load balancers) with the root_path parameter?",
+                "expected_sources": [
+                    "advanced/behind-a-proxy.md"
+                ],
+                "sources_before": [
+                    "advanced/sub-applications.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md"
+                ],
+                "sources_after": [
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "tutorial/cors.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 39,
+                "question": "How do you define sub-applications in FastAPI to mount another independent ASGI app under a specific path?",
+                "expected_sources": [
+                    "advanced/sub-applications.md"
+                ],
+                "sources_before": [
+                    "advanced/behind-a-proxy.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md"
+                ],
+                "sources_after": [
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/behind-a-proxy.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 40,
+                "question": "How do you handle lifetime events (startup and shutdown) in FastAPI using a lifespan context manager?",
+                "expected_sources": [
+                    "advanced/events.md"
+                ],
+                "sources_before": [
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/testing-events.md"
+                ],
+                "sources_after": [
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/testing-events.md",
+                    "advanced/events.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 41,
+                "question": "How can you override dependencies for testing in FastAPI?",
+                "expected_sources": [
+                    "advanced/testing-dependencies.md"
+                ],
+                "sources_before": [
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "advanced/testing-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "sources_after": [
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/sub-dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 42,
+                "question": "How do you use Jinja2 templates in FastAPI?",
+                "expected_sources": [
+                    "advanced/templates.md"
+                ],
+                "sources_before": [
+                    "reference/templating.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md"
+                ],
+                "sources_after": [
+                    "reference/templating.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 43,
+                "question": "How do you configure additional JSON schemas/examples for Pydantic models in OpenAPI documentation?",
+                "expected_sources": [
+                    "tutorial/schema-extra-example.md"
+                ],
+                "sources_before": [
+                    "advanced/additional-responses.md",
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "advanced/additional-responses.md"
+                ],
+                "sources_after": [
+                    "advanced/additional-responses.md",
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "advanced/additional-responses.md",
+                    "tutorial/schema-extra-example.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 44,
+                "question": "How do you retrieve request headers directly in your path operation function in FastAPI?",
+                "expected_sources": [
+                    "tutorial/header-params.md"
+                ],
+                "sources_before": [
+                    "advanced/using-request-directly.md",
+                    "reference/parameters.md",
+                    "reference/request.md",
+                    "tutorial/dependencies/index.md",
+                    "reference/response.md"
+                ],
+                "sources_after": [
+                    "advanced/using-request-directly.md",
+                    "reference/parameters.md",
+                    "reference/request.md",
+                    "tutorial/dependencies/index.md",
+                    "reference/response.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            },
+            {
+                "question_id": 45,
+                "question": "How do you write asynchronous tests in FastAPI using HTTPX and pytest?",
+                "expected_sources": [
+                    "advanced/async-tests.md"
+                ],
+                "sources_before": [
+                    "advanced/async-tests.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md",
+                    "advanced/async-tests.md"
+                ],
+                "sources_after": [
+                    "advanced/async-tests.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 46,
+                "question": "How do you set response cookies directly inside your path operation functions in FastAPI?",
+                "expected_sources": [
+                    "advanced/response-cookies.md"
+                ],
+                "sources_before": [
+                    "reference/response.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-cookies.md",
+                    "advanced/using-request-directly.md",
+                    "reference/responses.md"
+                ],
+                "sources_after": [
+                    "reference/response.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-cookies.md",
+                    "advanced/response-cookies.md",
+                    "advanced/additional-status-codes.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 47,
+                "question": "How do you set response headers directly inside your path operation functions in FastAPI?",
+                "expected_sources": [
+                    "advanced/response-headers.md"
+                ],
+                "sources_before": [
+                    "reference/response.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/custom-response.md",
+                    "advanced/using-request-directly.md"
+                ],
+                "sources_after": [
+                    "reference/response.md",
+                    "advanced/response-directly.md",
+                    "advanced/custom-response.md",
+                    "advanced/response-headers.md",
+                    "advanced/additional-status-codes.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 48,
+                "question": "How do you define a query parameter model in FastAPI using Pydantic?",
+                "expected_sources": [
+                    "tutorial/query-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/body.md",
+                    "tutorial/body.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/body.md",
+                    "tutorial/body.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 49,
+                "question": "How do you declare Form fields in FastAPI using Form parameters?",
+                "expected_sources": [
+                    "tutorial/request-forms.md"
+                ],
+                "sources_before": [
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-forms.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-forms.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 50,
+                "question": "How does path parameter type validation work in FastAPI when a value cannot be parsed?",
+                "expected_sources": [
+                    "tutorial/path-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/first-steps.md",
+                    "tutorial/body.md",
+                    "tutorial/path-params-numeric-validations.md"
+                ],
+                "sources_after": [
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/body.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            }
+        ]
+    },
+    "semantic": {
+        "before": {
+            "hit_at_1": 0.66,
+            "hit_at_3": 0.86,
+            "hit_at_5": 0.9
+        },
+        "after": {
+            "hit_at_1": 0.8,
+            "hit_at_3": 0.92,
+            "hit_at_5": 0.96
+        },
+        "per_question": [
+            {
+                "question_id": 1,
+                "question": "How does dependency injection work in FastAPI?",
+                "expected_sources": [
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 2,
+                "question": "What does FastAPI's Depends function do?",
+                "expected_sources": [
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "advanced/advanced-dependencies.md",
+                    "reference/dependencies.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/index.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 3,
+                "question": "How can a Python class be used as a dependency in FastAPI?",
+                "expected_sources": [
+                    "tutorial/dependencies/classes-as-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "reference/dependencies.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 4,
+                "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
+                "expected_sources": [
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_before": [
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 5,
+                "question": "How does FastAPI support asynchronous path operation functions?",
+                "expected_sources": [
+                    "async.md"
+                ],
+                "sources_before": [
+                    "async.md",
+                    "async.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/dataclasses.md",
+                    "tutorial/first-steps.md"
+                ],
+                "sources_after": [
+                    "async.md",
+                    "advanced/dataclasses.md",
+                    "async.md",
+                    "tutorial/server-sent-events.md",
+                    "async.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 6,
+                "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
+                "expected_sources": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/body.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/body.md",
+                    "tutorial/query-params.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 7,
+                "question": "How does FastAPI handle request bodies using Pydantic models?",
+                "expected_sources": [
+                    "tutorial/body.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "sources_before": [
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/body.md",
+                    "advanced/dataclasses.md",
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/security/get-current-user.md"
+                ],
+                "sources_after": [
+                    "tutorial/body.md",
+                    "tutorial/body-multiple-params.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "advanced/using-request-directly.md",
+                    "advanced/path-operation-advanced-configuration.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 8,
+                "question": "How does FastAPI use response_model to filter output data and prevent sensitive fields like passwords from leaking in API responses?",
+                "expected_sources": [
+                    "tutorial/response-model.md"
+                ],
+                "sources_before": [
+                    "tutorial/response-model.md",
+                    "advanced/custom-response.md",
+                    "tutorial/response-model.md",
+                    "tutorial/response-model.md",
+                    "tutorial/request-form-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/response-model.md",
+                    "tutorial/response-model.md",
+                    "advanced/response-change-status-code.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/response-model.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 9,
+                "question": "How does FastAPI use OAuth2PasswordBearer for authentication?",
+                "expected_sources": [
+                    "tutorial/security/first-steps.md"
+                ],
+                "sources_before": [
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/first-steps.md"
+                ],
+                "sources_after": [
+                    "tutorial/security/first-steps.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md",
+                    "tutorial/security/first-steps.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 10,
+                "question": "How can multiple worker processes be used when running a FastAPI application?",
+                "expected_sources": [
+                    "deployment/server-workers.md"
+                ],
+                "sources_before": [
+                    "deployment/concepts.md",
+                    "tutorial/middleware.md",
+                    "tutorial/background-tasks.md",
+                    "deployment/docker.md",
+                    "deployment/server-workers.md"
+                ],
+                "sources_after": [
+                    "deployment/server-workers.md",
+                    "deployment/concepts.md",
+                    "deployment/concepts.md",
+                    "deployment/docker.md",
+                    "deployment/docker.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 11,
+                "question": "How do you add middleware to a FastAPI application using @app.middleware to process every request and response?",
+                "expected_sources": [
+                    "tutorial/middleware.md"
+                ],
+                "sources_before": [
+                    "tutorial/middleware.md",
+                    "tutorial/frontend.md",
+                    "reference/middleware.md",
+                    "tutorial/middleware.md",
+                    "tutorial/testing.md"
+                ],
+                "sources_after": [
+                    "tutorial/middleware.md",
+                    "tutorial/middleware.md",
+                    "tutorial/cors.md",
+                    "tutorial/frontend.md",
+                    "advanced/middleware.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 12,
+                "question": "How do BackgroundTasks work in FastAPI to run tasks like sending emails after returning an HTTP response?",
+                "expected_sources": [
+                    "tutorial/background-tasks.md"
+                ],
+                "sources_before": [
+                    "tutorial/background-tasks.md",
+                    "reference/background.md",
+                    "tutorial/background-tasks.md",
+                    "advanced/advanced-dependencies.md",
+                    "tutorial/background-tasks.md"
+                ],
+                "sources_after": [
+                    "tutorial/background-tasks.md",
+                    "reference/background.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/background-tasks.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 13,
+                "question": "How do you raise an HTTPException with a custom status code and detail message in FastAPI to return error responses?",
+                "expected_sources": [
+                    "tutorial/handling-errors.md"
+                ],
+                "sources_before": [
+                    "tutorial/handling-errors.md",
+                    "tutorial/handling-errors.md",
+                    "tutorial/handling-errors.md",
+                    "tutorial/handling-errors.md",
+                    "reference/status.md"
+                ],
+                "sources_after": [
+                    "tutorial/handling-errors.md",
+                    "reference/exceptions.md",
+                    "advanced/additional-status-codes.md",
+                    "tutorial/handling-errors.md",
+                    "advanced/custom-response.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 14,
+                "question": "How do you configure CORS in FastAPI using CORSMiddleware to allow cross-origin requests from a browser?",
+                "expected_sources": [
+                    "tutorial/cors.md"
+                ],
+                "sources_before": [
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "tutorial/cors.md"
+                ],
+                "sources_after": [
+                    "tutorial/cors.md",
+                    "tutorial/cors.md",
+                    "advanced/response-headers.md",
+                    "tutorial/middleware.md",
+                    "tutorial/cors.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 15,
+                "question": "How do you add extra validation to query parameters in FastAPI using Query with min_length, max_length, and pattern constraints?",
+                "expected_sources": [
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/query-params.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/query-params-str-validations.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 16,
+                "question": "How do you declare and read cookie parameters in a FastAPI path operation function using Cookie()?",
+                "expected_sources": [
+                    "tutorial/cookie-params.md"
+                ],
+                "sources_before": [
+                    "advanced/response-cookies.md",
+                    "reference/parameters.md",
+                    "tutorial/cookie-params.md",
+                    "tutorial/cookie-param-models.md",
+                    "reference/response.md"
+                ],
+                "sources_after": [
+                    "advanced/response-cookies.md",
+                    "tutorial/cookie-params.md",
+                    "reference/response.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/cookie-params.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 17,
+                "question": "How do you declare HTTP header parameters in FastAPI using Header(), and how does the convert_underscores option control underscore to hyphen conversion?",
+                "expected_sources": [
+                    "tutorial/header-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-params.md",
+                    "tutorial/header-params.md",
+                    "tutorial/header-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-params.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-params.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 18,
+                "question": "How do you serve static files like CSS, JavaScript, and images in a FastAPI application using StaticFiles?",
+                "expected_sources": [
+                    "tutorial/static-files.md"
+                ],
+                "sources_before": [
+                    "reference/staticfiles.md",
+                    "tutorial/static-files.md",
+                    "tutorial/static-files.md",
+                    "tutorial/bigger-applications.md",
+                    "advanced/templates.md"
+                ],
+                "sources_after": [
+                    "reference/staticfiles.md",
+                    "advanced/templates.md",
+                    "tutorial/static-files.md",
+                    "tutorial/frontend.md",
+                    "tutorial/frontend.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 19,
+                "question": "How do you write automated tests for FastAPI path operations using TestClient from starlette?",
+                "expected_sources": [
+                    "tutorial/testing.md"
+                ],
+                "sources_before": [
+                    "deployment/versions.md",
+                    "tutorial/testing.md",
+                    "deployment/versions.md",
+                    "tutorial/testing.md",
+                    "tutorial/path-params.md"
+                ],
+                "sources_after": [
+                    "tutorial/testing.md",
+                    "tutorial/testing.md",
+                    "tutorial/path-params.md",
+                    "advanced/async-tests.md",
+                    "advanced/testing-websockets.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 20,
+                "question": "How do nested sub-dependencies work in FastAPI where a dependable function itself declares a Depends() on another dependable, and how does use_cache control whether a dependency is called multiple times?",
+                "expected_sources": [
+                    "tutorial/dependencies/sub-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "async.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/sub-dependencies.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "async.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 21,
+                "question": "How do you define nested Pydantic models in FastAPI to validate complex JSON payloads?",
+                "expected_sources": [
+                    "tutorial/body-nested-models.md"
+                ],
+                "sources_before": [
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/body-nested-models.md",
+                    "advanced/additional-responses.md",
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/body-nested-models.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/body-nested-models.md",
+                    "features.md",
+                    "advanced/path-operation-advanced-configuration.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 22,
+                "question": "What are the advantages of using jsonable_encoder in FastAPI before saving data to a database?",
+                "expected_sources": [
+                    "tutorial/encoder.md"
+                ],
+                "sources_before": [
+                    "tutorial/encoder.md",
+                    "reference/encoders.md",
+                    "tutorial/encoder.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-directly.md"
+                ],
+                "sources_after": [
+                    "tutorial/encoder.md",
+                    "advanced/response-directly.md",
+                    "tutorial/server-sent-events.md",
+                    "tutorial/stream-json-lines.md",
+                    "advanced/response-directly.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 23,
+                "question": "How do you declare optional query parameters with default values in FastAPI?",
+                "expected_sources": [
+                    "tutorial/query-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-params.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/body.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-params.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 24,
+                "question": "How do you handle file uploads in FastAPI using File and UploadFile?",
+                "expected_sources": [
+                    "tutorial/request-files.md"
+                ],
+                "sources_before": [
+                    "reference/uploadfile.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-files.md",
+                    "reference/uploadfile.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 25,
+                "question": "How can you combine both Form fields and Files in the same FastAPI path operation?",
+                "expected_sources": [
+                    "tutorial/request-forms-and-files.md"
+                ],
+                "sources_before": [
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-files.md",
+                    "reference/uploadfile.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-files.md",
+                    "tutorial/background-tasks.md",
+                    "tutorial/request-files.md",
+                    "tutorial/request-forms.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 26,
+                "question": "How do you declare cookie parameter models using Pydantic in FastAPI?",
+                "expected_sources": [
+                    "tutorial/cookie-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/cookie-param-models.md",
+                    "reference/parameters.md",
+                    "tutorial/query-param-models.md",
+                    "advanced/dataclasses.md",
+                    "advanced/response-cookies.md"
+                ],
+                "sources_after": [
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/body.md",
+                    "tutorial/body.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 27,
+                "question": "How do you declare header parameter models in FastAPI using Pydantic?",
+                "expected_sources": [
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/body.md",
+                    "advanced/dataclasses.md",
+                    "tutorial/body.md"
+                ],
+                "sources_after": [
+                    "tutorial/header-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/query-param-models.md",
+                    "tutorial/body.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 28,
+                "question": "How do you define path operation configuration metadata like summary, description, and tags?",
+                "expected_sources": [
+                    "tutorial/path-operation-configuration.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/metadata.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_after": [
+                    "tutorial/path-operation-configuration.md",
+                    "tutorial/metadata.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "tutorial/metadata.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 29,
+                "question": "How do you configure a path operation to return a custom HTTP status code?",
+                "expected_sources": [
+                    "tutorial/response-status-code.md"
+                ],
+                "sources_before": [
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/custom-response.md",
+                    "advanced/response-change-status-code.md",
+                    "advanced/additional-status-codes.md",
+                    "tutorial/response-status-code.md"
+                ],
+                "sources_after": [
+                    "advanced/additional-status-codes.md",
+                    "advanced/response-change-status-code.md",
+                    "advanced/additional-status-codes.md",
+                    "tutorial/path-operation-configuration.md",
+                    "advanced/custom-response.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            },
+            {
+                "question_id": 30,
+                "question": "How do you perform database operations in FastAPI using SQL Databases and SQLAlchemy?",
+                "expected_sources": [
+                    "tutorial/sql-databases.md"
+                ],
+                "sources_before": [
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/body-fields.md"
+                ],
+                "sources_after": [
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/sql-databases.md",
+                    "tutorial/first-steps.md",
+                    "tutorial/security/get-current-user.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 31,
+                "question": "How do you define a global dependency in a FastAPI application?",
+                "expected_sources": [
+                    "tutorial/dependencies/global-dependencies.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/index.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "advanced/testing-dependencies.md",
+                    "advanced/security/oauth2-scopes.md",
+                    "security/security/oauth2-scopes.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 32,
+                "question": "How do dependencies with yield work in FastAPI, and what is their relationship to context managers?",
+                "expected_sources": [
+                    "tutorial/dependencies/dependencies-with-yield.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "sources_after": [
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "advanced/advanced-dependencies.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 33,
+                "question": "How do you use the dependencies parameter in path operation decorators like @app.get or @app.post?",
+                "expected_sources": [
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+                ],
+                "sources_before": [
+                    "tutorial/dependencies/index.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_after": [
+                    "tutorial/response-model.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "tutorial/dependencies/global-dependencies.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/response-status-code.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 34,
+                "question": "How do you structure a larger FastAPI application using APIRouter?",
+                "expected_sources": [
+                    "tutorial/bigger-applications.md"
+                ],
+                "sources_before": [
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/middleware.md"
+                ],
+                "sources_after": [
+                    "tutorial/bigger-applications.md",
+                    "tutorial/frontend.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md",
+                    "tutorial/bigger-applications.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 35,
+                "question": "How do you manage settings and configuration in FastAPI using Pydantic Settings?",
+                "expected_sources": [
+                    "advanced/settings.md"
+                ],
+                "sources_before": [
+                    "advanced/settings.md",
+                    "advanced/settings.md",
+                    "tutorial/body-fields.md",
+                    "tutorial/body.md",
+                    "advanced/dataclasses.md"
+                ],
+                "sources_after": [
+                    "advanced/settings.md",
+                    "advanced/settings.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/body.md",
+                    "advanced/dataclasses.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 36,
+                "question": "How does FastAPI support WebSocket communication, and how do you write a route for it?",
+                "expected_sources": [
+                    "advanced/websockets.md"
+                ],
+                "sources_before": [
+                    "advanced/websockets.md",
+                    "reference/apirouter.md",
+                    "reference/websockets.md",
+                    "reference/fastapi.md",
+                    "reference/request.md"
+                ],
+                "sources_after": [
+                    "advanced/websockets.md",
+                    "reference/websockets.md",
+                    "advanced/websockets.md",
+                    "advanced/websockets.md",
+                    "advanced/websockets.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 37,
+                "question": "How do you define custom responses in FastAPI to return custom headers, XML, or HTML content?",
+                "expected_sources": [
+                    "advanced/custom-response.md"
+                ],
+                "sources_before": [
+                    "advanced/custom-response.md",
+                    "advanced/custom-response.md",
+                    "reference/response.md",
+                    "advanced/custom-response.md",
+                    "advanced/response-directly.md"
+                ],
+                "sources_after": [
+                    "advanced/custom-response.md",
+                    "reference/responses.md",
+                    "advanced/response-directly.md",
+                    "advanced/response-headers.md",
+                    "advanced/custom-response.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 38,
+                "question": "How do you configure a FastAPI application behind a proxy server (like Nginx, Traefik, or load balancers) with the root_path parameter?",
+                "expected_sources": [
+                    "advanced/behind-a-proxy.md"
+                ],
+                "sources_before": [
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "tutorial/first-steps.md"
+                ],
+                "sources_after": [
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "tutorial/cors.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 39,
+                "question": "How do you define sub-applications in FastAPI to mount another independent ASGI app under a specific path?",
+                "expected_sources": [
+                    "advanced/sub-applications.md"
+                ],
+                "sources_before": [
+                    "advanced/sub-applications.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/sub-applications.md",
+                    "advanced/behind-a-proxy.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+                ],
+                "sources_after": [
+                    "advanced/sub-applications.md",
+                    "advanced/sub-applications.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/behind-a-proxy.md",
+                    "advanced/sub-applications.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 40,
+                "question": "How do you handle lifetime events (startup and shutdown) in FastAPI using a lifespan context manager?",
+                "expected_sources": [
+                    "advanced/events.md"
+                ],
+                "sources_before": [
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/testing-events.md",
+                    "advanced/events.md",
+                    "advanced/events.md"
+                ],
+                "sources_after": [
+                    "advanced/events.md",
+                    "advanced/events.md",
+                    "advanced/testing-events.md",
+                    "advanced/events.md",
+                    "advanced/events.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 41,
+                "question": "How can you override dependencies for testing in FastAPI?",
+                "expected_sources": [
+                    "advanced/testing-dependencies.md"
+                ],
+                "sources_before": [
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/dependencies-in-path-operation-decorators.md",
+                    "deployment/versions.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "advanced/testing-dependencies.md",
+                    "tutorial/dependencies/dependencies-with-yield.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 42,
+                "question": "How do you use Jinja2 templates in FastAPI?",
+                "expected_sources": [
+                    "advanced/templates.md"
+                ],
+                "sources_before": [
+                    "reference/templating.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md"
+                ],
+                "sources_after": [
+                    "advanced/templates.md",
+                    "reference/templating.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md",
+                    "advanced/templates.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 43,
+                "question": "How do you configure additional JSON schemas/examples for Pydantic models in OpenAPI documentation?",
+                "expected_sources": [
+                    "tutorial/schema-extra-example.md"
+                ],
+                "sources_before": [
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "advanced/path-operation-advanced-configuration.md",
+                    "advanced/additional-responses.md"
+                ],
+                "sources_after": [
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "tutorial/schema-extra-example.md",
+                    "advanced/additional-responses.md",
+                    "advanced/path-operation-advanced-configuration.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 44,
+                "question": "How do you retrieve request headers directly in your path operation function in FastAPI?",
+                "expected_sources": [
+                    "tutorial/header-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/body.md",
+                    "reference/parameters.md",
+                    "advanced/using-request-directly.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "sources_after": [
+                    "reference/parameters.md",
+                    "advanced/using-request-directly.md",
+                    "advanced/using-request-directly.md",
+                    "reference/response.md",
+                    "advanced/additional-status-codes.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": false
+            },
+            {
+                "question_id": 45,
+                "question": "How do you write asynchronous tests in FastAPI using HTTPX and pytest?",
+                "expected_sources": [
+                    "advanced/async-tests.md"
+                ],
+                "sources_before": [
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "tutorial/testing.md",
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md"
+                ],
+                "sources_after": [
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md",
+                    "tutorial/testing.md",
+                    "advanced/async-tests.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 46,
+                "question": "How do you set response cookies directly inside your path operation functions in FastAPI?",
+                "expected_sources": [
+                    "advanced/response-cookies.md"
+                ],
+                "sources_before": [
+                    "advanced/response-cookies.md",
+                    "reference/response.md",
+                    "reference/parameters.md",
+                    "tutorial/cookie-params.md",
+                    "advanced/additional-status-codes.md"
+                ],
+                "sources_after": [
+                    "advanced/response-cookies.md",
+                    "reference/response.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/response-headers.md",
+                    "advanced/additional-responses.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 47,
+                "question": "How do you set response headers directly inside your path operation functions in FastAPI?",
+                "expected_sources": [
+                    "advanced/response-headers.md"
+                ],
+                "sources_before": [
+                    "reference/response.md",
+                    "tutorial/body.md",
+                    "advanced/additional-status-codes.md",
+                    "tutorial/dependencies/index.md",
+                    "tutorial/body-multiple-params.md"
+                ],
+                "sources_after": [
+                    "reference/response.md",
+                    "advanced/additional-status-codes.md",
+                    "advanced/custom-response.md",
+                    "advanced/response-headers.md",
+                    "advanced/additional-responses.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 48,
+                "question": "How do you define a query parameter model in FastAPI using Pydantic?",
+                "expected_sources": [
+                    "tutorial/query-param-models.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-param-models.md",
+                    "tutorial/body.md",
+                    "tutorial/body.md",
+                    "advanced/dataclasses.md",
+                    "tutorial/header-param-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/query-param-models.md",
+                    "tutorial/cookie-param-models.md",
+                    "tutorial/header-param-models.md",
+                    "tutorial/body-fields.md",
+                    "tutorial/query-param-models.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": true,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 49,
+                "question": "How do you declare Form fields in FastAPI using Form parameters?",
+                "expected_sources": [
+                    "tutorial/request-forms.md"
+                ],
+                "sources_before": [
+                    "tutorial/request-forms.md",
+                    "tutorial/body.md",
+                    "tutorial/security/simple-oauth2.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/request-form-models.md"
+                ],
+                "sources_after": [
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-forms.md",
+                    "tutorial/request-forms-and-files.md",
+                    "tutorial/request-form-models.md",
+                    "tutorial/request-forms.md"
+                ],
+                "before_hit_at_1": true,
+                "before_hit_at_3": true,
+                "before_hit_at_5": true,
+                "after_hit_at_1": false,
+                "after_hit_at_3": true,
+                "after_hit_at_5": true
+            },
+            {
+                "question_id": 50,
+                "question": "How does path parameter type validation work in FastAPI when a value cannot be parsed?",
+                "expected_sources": [
+                    "tutorial/path-params.md"
+                ],
+                "sources_before": [
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "advanced/using-request-directly.md",
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/dependencies/index.md"
+                ],
+                "sources_after": [
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/query-params-str-validations.md",
+                    "tutorial/body-multiple-params.md",
+                    "tutorial/path-params.md",
+                    "tutorial/body.md"
+                ],
+                "before_hit_at_1": false,
+                "before_hit_at_3": false,
+                "before_hit_at_5": false,
+                "after_hit_at_1": false,
+                "after_hit_at_3": false,
+                "after_hit_at_5": true
+            }
+        ]
+    }
+}

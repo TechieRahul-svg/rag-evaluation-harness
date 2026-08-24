@@ -1,0 +1,455 @@
+[
+    {
+        "id": 1,
+        "question": "How does dependency injection work in FastAPI?",
+        "expected_sources": [
+            "tutorial/dependencies/index.md"
+        ],
+        "expected_answer": "Dependency injection in FastAPI means that a path operation function can declare things it requires (its 'dependencies'), and FastAPI will automatically call those dependency functions with the correct parameters, get their results, and inject the results into the path operation function. A dependency is declared by passing a callable to Depends() as a parameter — you do not call it directly. For every new request, FastAPI calls the dependency, gets its return value, and assigns it to the corresponding parameter. This is useful for sharing logic, sharing database connections, and enforcing security or authentication, while minimizing code repetition.",
+        "category": "dependencies"
+    },
+    {
+        "id": 2,
+        "question": "What does FastAPI's Depends function do?",
+        "expected_sources": [
+            "tutorial/dependencies/index.md"
+        ],
+        "expected_answer": "Depends tells FastAPI which callable a path operation function depends on. You pass the callable to Depends() without calling it directly. Whenever a request arrives, FastAPI calls that dependency function with the correct parameters, gets its return value, and assigns it to the parameter in the path operation function. Depends is used the same way as Body or Query in function parameters, but it takes a single argument — the dependency callable.",
+        "category": "dependencies"
+    },
+    {
+        "id": 3,
+        "question": "How can a Python class be used as a dependency in FastAPI?",
+        "expected_sources": [
+            "tutorial/dependencies/classes-as-dependencies.md"
+        ],
+        "expected_answer": "A Python class can be used as a dependency because a class is callable — calling it creates an instance. FastAPI checks that a dependency is a callable, then inspects its parameters (from __init__) the same way it does for path operation functions. When the dependency is resolved, FastAPI calls the class, creates an instance, and injects that instance into the path operation function. As a shortcut, if the type annotation already names the class, you can write Depends() with no argument and FastAPI will infer the class from the type annotation.",
+        "category": "dependencies"
+    },
+    {
+        "id": 4,
+        "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
+        "expected_sources": [
+            "tutorial/dependencies/classes-as-dependencies.md",
+            "advanced/advanced-dependencies.md"
+        ],
+        "expected_answer": "FastAPI supports parameterized dependencies through callable class instances. You define a class with __init__ to store configuration parameters, and a __call__ method that FastAPI will use to inspect and resolve the dependency. An instance of the class (not the class itself) is passed to Depends(). When resolving, FastAPI calls the instance like a function, passing request parameters to __call__ and injecting its return value into the path operation function. This allows a single class to produce different dependency behaviors depending on how the instance was initialized.",
+        "category": "advanced-dependencies"
+    },
+    {
+        "id": 5,
+        "question": "How does FastAPI support asynchronous path operation functions?",
+        "expected_sources": [
+            "async.md"
+        ],
+        "expected_answer": "FastAPI supports both async def and normal def path operation functions. If a library requires await, declare the function with async def so you can use await inside it. If a library does not support async, use a normal def — FastAPI will run it in an external threadpool so it does not block the server. You can mix async def and def freely across path operations. FastAPI handles both correctly and remains highly performant in either case.",
+        "category": "async"
+    },
+    {
+        "id": 6,
+        "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
+        "expected_sources": [
+            "tutorial/path-params.md",
+            "tutorial/path-params-numeric-validations.md"
+        ],
+        "expected_answer": "Path parameters are declared using the same syntax as Python format strings in the path string, e.g. /items/{item_id}, and the parameter name is received as a function argument. You can declare the type of a path parameter using standard Python type annotations, e.g. item_id: int. FastAPI will then automatically parse the incoming string value into that type, validate it (returning a clear error if the value cannot be converted), and provide editor support such as completion and type checking.",
+        "category": "path-parameters"
+    },
+    {
+        "id": 7,
+        "question": "How does FastAPI handle request bodies using Pydantic models?",
+        "expected_sources": [
+            "tutorial/body.md",
+            "tutorial/body-multiple-params.md"
+        ],
+        "expected_answer": "To declare a request body, you create a class that inherits from Pydantic's BaseModel and declare its attributes with standard Python types. You then declare a parameter in your path operation function with the type set to that model class. FastAPI will automatically read the request body as JSON, convert types, validate the data (returning a clear error if invalid), give you the received data as the typed model instance with full editor support, and generate JSON Schema definitions that appear in the interactive OpenAPI documentation.",
+        "category": "request-body"
+    },
+    {
+        "id": 8,
+        "question": "How does FastAPI use response_model to filter output data and prevent sensitive fields like passwords from leaking in API responses?",
+        "expected_sources": [
+            "tutorial/response-model.md"
+        ],
+        "expected_answer": "A response model in FastAPI is declared by annotating the path operation function's return type or by using the response_model parameter on the decorator. FastAPI uses it to validate the returned data, add a JSON Schema for the response in the OpenAPI schema (used by automatic docs and client code generators), and serialize the data via Pydantic. Most importantly, it limits and filters the output to only what is defined in the return type, which is critical for security — preventing unintended fields such as passwords from being leaked in responses.",
+        "category": "response-model"
+    },
+    {
+        "id": 9,
+        "question": "How does FastAPI use OAuth2PasswordBearer for authentication?",
+        "expected_sources": [
+            "tutorial/security/first-steps.md"
+        ],
+        "expected_answer": "OAuth2PasswordBearer is instantiated with a tokenUrl parameter that points to the URL clients use to send username and password and receive a token. The instance is callable and is used as a dependency via Depends. On each request, FastAPI calls it to look for an Authorization header containing a Bearer token, extracts and returns the token string, and automatically responds with a 401 UNAUTHORIZED error if the header is missing or malformed. FastAPI also registers it as a security scheme in the OpenAPI schema so it appears in the interactive documentation.",
+        "category": "security"
+    },
+    {
+        "id": 10,
+        "question": "How can multiple worker processes be used when running a FastAPI application?",
+        "expected_sources": [
+            "deployment/server-workers.md"
+        ],
+        "expected_answer": "Multiple worker processes can be started by passing the --workers option to either the fastapi or uvicorn command, for example: fastapi run --workers 4 main.py or uvicorn main:app --workers 4. This allows the application to take advantage of multiple CPU cores and handle more requests in parallel. For containerized environments like Kubernetes, the documentation recommends running a single Uvicorn process per container rather than using multiple workers.",
+        "category": "deployment"
+    },
+    {
+        "id": 11,
+        "question": "How do you add middleware to a FastAPI application using @app.middleware to process every request and response?",
+        "expected_sources": [
+            "tutorial/middleware.md"
+        ],
+        "expected_answer": "You add middleware to a FastAPI application by decorating an async function with @app.middleware('http'). The function receives the request and a call_next function. You can process the request before passing it to call_next(request), which returns the response from the path operation. You can then modify the response before returning it. Every request passes through middleware before reaching the path operation, and every response passes back through it.",
+        "category": "middleware"
+    },
+    {
+        "id": 12,
+        "question": "How do BackgroundTasks work in FastAPI to run tasks like sending emails after returning an HTTP response?",
+        "expected_sources": [
+            "tutorial/background-tasks.md"
+        ],
+        "expected_answer": "BackgroundTasks allows you to define tasks that run after the response has been sent to the client. You declare a BackgroundTasks parameter in your path operation function, then call background_tasks.add_task() with a function and its arguments. FastAPI will run that function in the background after the response is returned. This is useful for tasks like sending notification emails or processing data without making the client wait.",
+        "category": "background-tasks"
+    },
+    {
+        "id": 13,
+        "question": "How do you raise an HTTPException with a custom status code and detail message in FastAPI to return error responses?",
+        "expected_sources": [
+            "tutorial/handling-errors.md"
+        ],
+        "expected_answer": "You raise an HTTPException by importing it from fastapi and raising it with a status_code and optional detail parameter, for example: raise HTTPException(status_code=404, detail='Item not found'). FastAPI will convert this into an HTTP error response with the given status code and a JSON body containing the detail message. You can also add custom headers to the exception. You can register custom exception handlers using the @app.exception_handler() decorator to override default behavior.",
+        "category": "error-handling"
+    },
+    {
+        "id": 14,
+        "question": "How do you configure CORS in FastAPI using CORSMiddleware to allow cross-origin requests from a browser?",
+        "expected_sources": [
+            "tutorial/cors.md"
+        ],
+        "expected_answer": "CORS is configured by adding CORSMiddleware to the application using app.add_middleware(). You specify allow_origins as a list of allowed origin URLs, and can also set allow_credentials, allow_methods, and allow_headers. Setting allow_origins=['*'] allows all origins. The middleware handles the browser's preflight OPTIONS requests and adds the appropriate CORS headers to all responses, enabling cross-origin requests from JavaScript in the browser.",
+        "category": "cors"
+    },
+    {
+        "id": 15,
+        "question": "How do you add extra validation to query parameters in FastAPI using Query with min_length, max_length, and pattern constraints?",
+        "expected_sources": [
+            "tutorial/query-params-str-validations.md"
+        ],
+        "expected_answer": "You add validation to query parameters by using Query() with Annotated. You can set min_length and max_length for string length constraints, and pattern to enforce a regex pattern. For example: q: Annotated[str | None, Query(min_length=3, max_length=50)] = None. FastAPI will validate the incoming query string value against these constraints and return a 422 Unprocessable Entity error with a clear message if the validation fails.",
+        "category": "query-validation"
+    },
+    {
+        "id": 16,
+        "question": "How do you declare and read cookie parameters in a FastAPI path operation function using Cookie()?",
+        "expected_sources": [
+            "tutorial/cookie-params.md"
+        ],
+        "expected_answer": "Cookie parameters are declared by importing Cookie from fastapi and using it as the default value of a function parameter with Annotated, for example: ads_id: Annotated[str | None, Cookie()] = None. FastAPI will automatically extract the value from the incoming request's cookie headers and inject it into the function. Cookies are declared the same way as Path and Query parameters.",
+        "category": "cookie-params"
+    },
+    {
+        "id": 17,
+        "question": "How do you declare HTTP header parameters in FastAPI using Header(), and how does the convert_underscores option control underscore to hyphen conversion?",
+        "expected_sources": [
+            "tutorial/header-params.md"
+        ],
+        "expected_answer": "Header parameters are declared by importing Header from fastapi and using it as the default value with Annotated, for example: user_agent: Annotated[str | None, Header()] = None. FastAPI automatically converts underscores in parameter names to hyphens to match standard HTTP header naming conventions, so user_agent matches the User-Agent header. You can disable this conversion by setting convert_underscores=False.",
+        "category": "header-params"
+    },
+    {
+        "id": 18,
+        "question": "How do you serve static files like CSS, JavaScript, and images in a FastAPI application using StaticFiles?",
+        "expected_sources": [
+            "tutorial/static-files.md"
+        ],
+        "expected_answer": "Static files are served by importing StaticFiles from starlette.staticfiles and mounting it on the FastAPI app using app.mount(). For example: app.mount('/static', StaticFiles(directory='static'), name='static'). This mounts the local directory named 'static' at the URL path '/static', so files in that directory are served directly. The name parameter is used internally by FastAPI for generating URLs.",
+        "category": "static-files"
+    },
+    {
+        "id": 19,
+        "question": "How do you write automated tests for FastAPI path operations using TestClient from starlette?",
+        "expected_sources": [
+            "tutorial/testing.md"
+        ],
+        "expected_answer": "FastAPI applications are tested using TestClient, imported from starlette.testclient. You create a TestClient instance by passing your FastAPI app to it, then use it like a requests session to make HTTP calls: client.get('/'), client.post('/items/', json={...}), etc. The responses are standard requests Response objects. Tests are written as normal pytest functions and do not require running a server. You can also override dependencies during testing.",
+        "category": "testing"
+    },
+    {
+        "id": 20,
+        "question": "How do nested sub-dependencies work in FastAPI where a dependable function itself declares a Depends() on another dependable, and how does use_cache control whether a dependency is called multiple times?",
+        "expected_sources": [
+            "tutorial/dependencies/sub-dependencies.md"
+        ],
+        "expected_answer": "FastAPI supports sub-dependencies: a dependency function can itself declare parameters that use Depends(), creating a chain. When FastAPI resolves the top-level dependency, it automatically resolves all sub-dependencies in the correct order, passing results down the chain. If the same dependency appears multiple times in the chain, FastAPI calls it only once per request and caches the result, reusing it for all dependants in that request.",
+        "category": "dependencies"
+    },
+    {
+        "id": 21,
+        "question": "How do you define nested Pydantic models in FastAPI to validate complex JSON payloads?",
+        "expected_sources": [
+            "tutorial/body-nested-models.md"
+        ],
+        "expected_answer": "You declare nested models by setting an attribute's type in a Pydantic model to another Pydantic model. For example, if you have an Image model, you can declare `image: Image` or a list of images using `tags: list[Image]` inside an Item model. FastAPI will recursively validate the structure, including the nested fields, and support generating deep JSON schemas in the OpenAPI docs.",
+        "category": "request-body"
+    },
+    {
+        "id": 22,
+        "question": "What are the advantages of using jsonable_encoder in FastAPI before saving data to a database?",
+        "expected_sources": [
+            "tutorial/encoder.md"
+        ],
+        "expected_answer": "The `jsonable_encoder` function converts data types like Pydantic models, datetimes, and UUIDs into standard Python data structures (like dicts, lists, strings) that are serializable to JSON. This is particularly useful before saving to databases (like MongoDB) that require standard data structures rather than Pydantic objects or complex Python types.",
+        "category": "encoder"
+    },
+    {
+        "id": 23,
+        "question": "How do you declare optional query parameters with default values in FastAPI?",
+        "expected_sources": [
+            "tutorial/query-params.md"
+        ],
+        "expected_answer": "You declare optional query parameters in FastAPI by defining them as function arguments with default values (e.g., `q: str | None = None` or `limit: int = 10`). If the parameter is not present in the URL, FastAPI uses the default value. If it is present, FastAPI parses and validates the value from the URL.",
+        "category": "query-params"
+    },
+    {
+        "id": 24,
+        "question": "How do you handle file uploads in FastAPI using File and UploadFile?",
+        "expected_sources": [
+            "tutorial/request-files.md"
+        ],
+        "expected_answer": "You handle file uploads in FastAPI by importing `File` and `UploadFile` and declaring them as parameters in your path operation function. `File` reads the entire file in memory as bytes, whereas `UploadFile` uses a spool file that is written to memory up to a limit and then stored on disk, making it suitable for large files. `UploadFile` also provides file-like methods like `read()`, `write()`, `seek()`, and attributes like `filename` and `content_type`.",
+        "category": "request-files"
+    },
+    {
+        "id": 25,
+        "question": "How can you combine both Form fields and Files in the same FastAPI path operation?",
+        "expected_sources": [
+            "tutorial/request-forms-and-files.md"
+        ],
+        "expected_answer": "You can declare both Form fields and Files in the same path operation function by importing `Form`, `File`, and `UploadFile` from `fastapi` and declaring them together. When you use both, the request is encoded as `multipart/form-data` instead of JSON. FastAPI parses the incoming multipart request, populating form fields and files appropriately.",
+        "category": "request-forms-and-files"
+    },
+    {
+        "id": 26,
+        "question": "How do you declare cookie parameter models using Pydantic in FastAPI?",
+        "expected_sources": [
+            "tutorial/cookie-param-models.md"
+        ],
+        "expected_answer": "You declare cookie parameter models by defining a Pydantic model with your cookie schema and declaring the parameter in your function annotated with `Cookie()`. FastAPI extracts the corresponding values from the request's cookies and validates them against the Pydantic model, providing structured validation for multiple cookies.",
+        "category": "cookie-param-models"
+    },
+    {
+        "id": 27,
+        "question": "How do you declare header parameter models in FastAPI using Pydantic?",
+        "expected_sources": [
+            "tutorial/header-param-models.md"
+        ],
+        "expected_answer": "You declare header parameter models by defining a Pydantic model representing your header fields and annotating the path operation parameter with `Header()`. FastAPI extracts the values from the HTTP headers, validates them according to the model, and injects the model instance into your function.",
+        "category": "header-param-models"
+    },
+    {
+        "id": 28,
+        "question": "How do you define path operation configuration metadata like summary, description, and tags?",
+        "expected_sources": [
+            "tutorial/path-operation-configuration.md"
+        ],
+        "expected_answer": "You define metadata in the path operation decorator using parameters like `summary`, `description`, `tags`, and `response_description`. You can also write a multi-line docstring in the path operation function, and FastAPI will automatically parse it and use it as the path operation's description in the OpenAPI UI.",
+        "category": "path-operation-configuration"
+    },
+    {
+        "id": 29,
+        "question": "How do you configure a path operation to return a custom HTTP status code?",
+        "expected_sources": [
+            "tutorial/response-status-code.md"
+        ],
+        "expected_answer": "You configure a custom HTTP status code by setting the `status_code` parameter in the path operation decorator, e.g., `@app.post('/items/', status_code=201)` or `@app.delete('/items/{id}', status_code=status.HTTP_204_NO_CONTENT)`. This defines the default status code returned for successful responses.",
+        "category": "response-status-code"
+    },
+    {
+        "id": 30,
+        "question": "How do you perform database operations in FastAPI using SQL Databases and SQLAlchemy?",
+        "expected_sources": [
+            "tutorial/sql-databases.md"
+        ],
+        "expected_answer": "You integrate SQL Databases by setting up a SQLAlchemy engine, a `SessionLocal` class for sessions, and a declarative base for models. Then, you define a dependency function (e.g., `get_db`) that yields a database session and closes it in a `finally` block. You pass this dependency to path operation functions via `Depends` to obtain database access for CRUD operations.",
+        "category": "sql-databases"
+    },
+    {
+        "id": 31,
+        "question": "How do you define a global dependency in a FastAPI application?",
+        "expected_sources": [
+            "tutorial/dependencies/global-dependencies.md"
+        ],
+        "expected_answer": "You define a global dependency by passing it to the `dependencies` parameter of the `FastAPI` instance: `app = FastAPI(dependencies=[Depends(verify_token)])`. This applies the dependency to all path operations in the application without needing to declare it in each individual route function.",
+        "category": "dependencies"
+    },
+    {
+        "id": 32,
+        "question": "How do dependencies with yield work in FastAPI, and what is their relationship to context managers?",
+        "expected_sources": [
+            "tutorial/dependencies/dependencies-with-yield.md"
+        ],
+        "expected_answer": "Dependencies with `yield` allow you to run setup actions, yield a value to the path operation, and execute tear-down code after the response is sent. FastAPI resolves the yield dependency like a context manager, executing the code after `yield` inside a `try...finally` block. This is commonly used for managing database connections, network sockets, or resources.",
+        "category": "dependencies"
+    },
+    {
+        "id": 33,
+        "question": "How do you use the dependencies parameter in path operation decorators like @app.get or @app.post?",
+        "expected_sources": [
+            "tutorial/dependencies/dependencies-in-path-operation-decorators.md"
+        ],
+        "expected_answer": "You declare dependencies in the decorator using the `dependencies` parameter, e.g., `@app.get('/items/', dependencies=[Depends(verify_token)])`. This is useful when you want to run authentication, permission checks, or logging but don't need the dependency's return value inside the path operation function.",
+        "category": "dependencies"
+    },
+    {
+        "id": 34,
+        "question": "How do you structure a larger FastAPI application using APIRouter?",
+        "expected_sources": [
+            "tutorial/bigger-applications.md"
+        ],
+        "expected_answer": "You structure larger applications by organizing route modules with `APIRouter`. You create `router = APIRouter()` in separate files, define routes on it, and include them in the main app file using `app.include_router(router)`. You can define prefixing paths, tags, default responses, and dependencies directly when including routers or instantiating them.",
+        "category": "bigger-applications"
+    },
+    {
+        "id": 35,
+        "question": "How do you manage settings and configuration in FastAPI using Pydantic Settings?",
+        "expected_sources": [
+            "advanced/settings.md"
+        ],
+        "expected_answer": "You manage configuration by creating a settings class that inherits from `BaseSettings` (from `pydantic-settings`). You define configuration options as class attributes. Pydantic Settings automatically reads values from environment variables or a `.env` file, validates the data types, and caches the configuration. You can use a dependency function to load settings via `Depends` for testability.",
+        "category": "settings"
+    },
+    {
+        "id": 36,
+        "question": "How does FastAPI support WebSocket communication, and how do you write a route for it?",
+        "expected_sources": [
+            "advanced/websockets.md"
+        ],
+        "expected_answer": "FastAPI supports WebSockets by importing `WebSocket` and using the `@app.websocket()` decorator on a route function. The function accepts a `websocket: WebSocket` argument. Inside the function, you must call `await websocket.accept()`, and you can then send/receive text, JSON, or bytes in a loop, handling connection closures using `WebSocketDisconnect` exceptions.",
+        "category": "websockets"
+    },
+    {
+        "id": 37,
+        "question": "How do you define custom responses in FastAPI to return custom headers, XML, or HTML content?",
+        "expected_sources": [
+            "advanced/custom-response.md"
+        ],
+        "expected_answer": "You define custom responses by returning an instance of a subclass of `Response`, such as `HTMLResponse`, `PlainTextResponse`, `JSONResponse`, `ORJSONResponse`, or `StreamingResponse`. You can configure custom headers, status codes, and media types in the response constructor. Returning a response object directly bypasses FastAPI's automatic serialization and Pydantic validation.",
+        "category": "custom-response"
+    },
+    {
+        "id": 38,
+        "question": "How do you configure a FastAPI application behind a proxy server (like Nginx, Traefik, or load balancers) with the root_path parameter?",
+        "expected_sources": [
+            "advanced/behind-a-proxy.md"
+        ],
+        "expected_answer": "When running behind a proxy, paths and URLs generated by FastAPI/OpenAPI might miss the proxy prefix. You solve this by configuring the `root_path` parameter in the `FastAPI` instance or passing `--root-path` to Uvicorn. The `root_path` configures the ASGI server to insert the proxy mount path prefix into the ASGI environment, ensuring correct paths in docs and responses.",
+        "category": "behind-a-proxy"
+    },
+    {
+        "id": 39,
+        "question": "How do you define sub-applications in FastAPI to mount another independent ASGI app under a specific path?",
+        "expected_sources": [
+            "advanced/sub-applications.md"
+        ],
+        "expected_answer": "You define sub-applications by creating two independent `FastAPI` instances, and mounting one inside the other using `app.mount('/subapp', sub_app)`. The sub-application runs as an independent application but shares the same ASGI server, keeping its own OpenAPI documentation path separate (accessible under `/subapp/docs`).",
+        "category": "sub-applications"
+    },
+    {
+        "id": 40,
+        "question": "How do you handle lifetime events (startup and shutdown) in FastAPI using a lifespan context manager?",
+        "expected_sources": [
+            "advanced/events.md"
+        ],
+        "expected_answer": "You handle lifetime events by defining an async context manager function decorated with `contextlib.asynccontextmanager`. You write startup logic before `yield`, and shutdown logic after `yield`. You pass this context manager to the `lifespan` parameter of the `FastAPI` instance: `app = FastAPI(lifespan=lifespan)`. This replaces the deprecated `@app.on_event('startup')` and `@app.on_event('shutdown')` hooks.",
+        "category": "events"
+    },
+    {
+        "id": 41,
+        "question": "How can you override dependencies for testing in FastAPI?",
+        "expected_sources": [
+            "advanced/testing-dependencies.md"
+        ],
+        "expected_answer": "You override dependencies during testing by assigning a dictionary mapping the original dependency function to the mock dependency function to `app.dependency_overrides`. For example, `app.dependency_overrides[get_db] = override_get_db`. After the tests run, you should clear the dictionary using `app.dependency_overrides.clear()` to restore the original behavior.",
+        "category": "testing"
+    },
+    {
+        "id": 42,
+        "question": "How do you use Jinja2 templates in FastAPI?",
+        "expected_sources": [
+            "advanced/templates.md"
+        ],
+        "expected_answer": "You use Jinja2 templates by importing `Jinja2Templates` from `fastapi.templating`, creating a templates instance pointing to a directory (e.g. `templates = Jinja2Templates(directory='templates')`), and returning a `TemplateResponse` from path operations. The route function accepts the `request: Request` argument, which must be passed to the template context along with any other variables.",
+        "category": "templates"
+    },
+    {
+        "id": 43,
+        "question": "How do you configure additional JSON schemas/examples for Pydantic models in OpenAPI documentation?",
+        "expected_sources": [
+            "tutorial/schema-extra-example.md"
+        ],
+        "expected_answer": "You configure examples by using `Field(examples=[...])` in Pydantic attributes, or by specifying `openapi_examples` in `Body()`. For older Pydantic versions, you can use a nested `model_config` with a `json_schema_extra` dictionary containing the `examples` key. These examples appear in the interactive OpenAPI documentation under the request body schema.",
+        "category": "schema-extra-example"
+    },
+    {
+        "id": 44,
+        "question": "How do you retrieve request headers directly in your path operation function in FastAPI?",
+        "expected_sources": [
+            "tutorial/header-params.md"
+        ],
+        "expected_answer": "You retrieve headers directly by importing `Header` from `fastapi` and declaring a parameter with it. For example, `user_agent: Annotated[str | None, Header()] = None`. FastAPI automatically converts parameter names from underscores to hyphens and performs case-insensitive header matching (e.g. matching `User-Agent` to `user_agent`).",
+        "category": "header-params"
+    },
+    {
+        "id": 45,
+        "question": "How do you write asynchronous tests in FastAPI using HTTPX and pytest?",
+        "expected_sources": [
+            "advanced/async-tests.md"
+        ],
+        "expected_answer": "To test async endpoints without blocking, you use `httpx.AsyncClient` inside your async test functions. You need to configure pytest to support async tests, typically using `@pytest.mark.anyio` or `@pytest.mark.asyncio`, and await requests: `async with AsyncClient(transport=ASGITransport(app=app), base_url='http://test') as ac: response = await ac.get('/')`.",
+        "category": "testing"
+    },
+    {
+        "id": 46,
+        "question": "How do you set response cookies directly inside your path operation functions in FastAPI?",
+        "expected_sources": [
+            "advanced/response-cookies.md"
+        ],
+        "expected_answer": "You set cookies by receiving a parameter of type `Response` in your path operation function and calling `.set_cookie()` on it, e.g., `response.set_cookie(key='fakesession', value='cookievalue')`. You can return your normal Pydantic data; FastAPI will automatically include the cookies set on the `Response` parameter in the final HTTP response.",
+        "category": "custom-response"
+    },
+    {
+        "id": 47,
+        "question": "How do you set response headers directly inside your path operation functions in FastAPI?",
+        "expected_sources": [
+            "advanced/response-headers.md"
+        ],
+        "expected_answer": "You set custom headers by accepting a parameter of type `Response` in your path operation function and adding headers to its `.headers` dictionary, e.g. `response.headers['X-Cat-Dog'] = 'alone-in-the-world'`. FastAPI includes these headers in the HTTP response while automatically serializing and returning the response data.",
+        "category": "custom-response"
+    },
+    {
+        "id": 48,
+        "question": "How do you define a query parameter model in FastAPI using Pydantic?",
+        "expected_sources": [
+            "tutorial/query-param-models.md"
+        ],
+        "expected_answer": "You define query parameter models by creating a Pydantic model with your query schema and annotating the function parameter using `Query()`. FastAPI extracts the URL query parameters, parses them, validates them against the model, and passes the model instance to your function.",
+        "category": "query-param-models"
+    },
+    {
+        "id": 49,
+        "question": "How do you declare Form fields in FastAPI using Form parameters?",
+        "expected_sources": [
+            "tutorial/request-forms.md"
+        ],
+        "expected_answer": "You declare Form fields by importing `Form` from `fastapi` and annotating your function parameters with it: `username: Annotated[str, Form()]`. This tells FastAPI to parse the request body as `application/x-www-form-urlencoded` instead of JSON and extract the parameter value.",
+        "category": "request-forms"
+    },
+    {
+        "id": 50,
+        "question": "How does path parameter type validation work in FastAPI when a value cannot be parsed?",
+        "expected_sources": [
+            "tutorial/path-params.md"
+        ],
+        "expected_answer": "FastAPI validates path parameter types based on Python type annotations. For example, if you declare `item_id: int` and request `/items/foo`, FastAPI detects that the value `'foo'` cannot be parsed as an integer. It automatically halts execution, returning a HTTP `422 Unprocessable Entity` status code and a JSON response detailing the validation error.",
+        "category": "path-parameters"
+    }
+]

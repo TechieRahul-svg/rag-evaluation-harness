@@ -1,0 +1,72 @@
+# =========================
+# Python
+# =========================
+
+__pycache__/
+*.py[cod]
+*.pyo
+
+.pytest_cache/
+
+
+# =========================
+# Virtual Environment
+# =========================
+
+venv/
+env/
+.venv/
+
+
+# =========================
+# IDE
+# =========================
+
+.vscode/
+.idea/
+
+
+# =========================
+# Environment Variables
+# =========================
+
+.env
+
+
+# =========================
+# Data
+# =========================
+
+data/raw/
+data/vectorstore/
+
+# Keep processed metadata if small
+# data/processed/
+
+
+# =========================
+# Models / Cache
+# =========================
+
+*.bin
+*.pt
+*.pth
+*.safetensors
+
+.cache/
+.huggingface/
+
+
+# =========================
+# Node
+# =========================
+
+frontend/node_modules/
+frontend/dist/
+
+
+# =========================
+# Logs
+# =========================
+
+*.log

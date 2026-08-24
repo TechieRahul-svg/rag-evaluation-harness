@@ -1,0 +1,26 @@
+{
+    "fixed": {
+        "hit_at_1": 0.54,
+        "hit_at_3": 0.84,
+        "hit_at_5": 0.9,
+        "total_questions": 50
+    },
+    "semantic": {
+        "hit_at_1": 0.66,
+        "hit_at_3": 0.86,
+        "hit_at_5": 0.9,
+        "total_questions": 50
+    },
+    "hybrid": {
+        "hit_at_1": 0.68,
+        "hit_at_3": 0.92,
+        "hit_at_5": 0.96,
+        "total_questions": 50
+    },
+    "hybrid_reranked": {
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.94,
+        "hit_at_5": 0.96,
+        "total_questions": 50
+    }
+}

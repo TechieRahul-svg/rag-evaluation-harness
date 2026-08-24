@@ -1,0 +1,284 @@
+{
+    "metrics": {
+        "average_faithfulness": 1.0,
+        "average_relevance": 5.0
+    },
+    "evaluations": [
+        {
+            "question_id": 1,
+            "question": "How does dependency injection work in FastAPI?",
+            "category": "dependencies",
+            "expected_sources": [
+                "tutorial/dependencies/index.md"
+            ],
+            "expected_answer": "Dependency injection in FastAPI means that a path operation function can declare things it requires (its 'dependencies'), and FastAPI will automatically call those dependency functions with the correct parameters, get their results, and inject the results into the path operation function. A dependency is declared by passing a callable to Depends() as a parameter — you do not call it directly. For every new request, FastAPI calls the dependency, gets its return value, and assigns it to the corresponding parameter. This is useful for sharing logic, sharing database connections, and enforcing security or authentication, while minimizing code repetition.",
+            "retrieved_sources": [
+                "tutorial/dependencies/index.md",
+                "features.md"
+            ],
+            "generated_answer": "In FastAPI, dependency injection is a powerful yet straightforward approach to managing dependencies between different parts of your application. This concept is particularly useful when dealing with complex systems where multiple components interact seamlessly. Here’s a detailed explanation of how dependency injection works in FastAPI:\n\n### 1. **Dependency Definition**\n   - **Function Declaration**: A dependency is defined as a function that takes all the same parameters that a path operation function can take.\n   - **Same Shape and Structure**: The dependency must have the same shape and structure as all your path operation functions. This ensures that each component knows exactly what kind of input it needs to process.\n\n### 2. **Injection Mechanism**\n   - **Decorators**: In FastAPI, you typically don't use decorators like `@app.get(\"/some-path\")` because they are used to decorate methods rather than dependencies.\n   - **Injectable Decorators**: Instead, you use `@app.dependency` which automatically creates a dependency object for you.\n   - **Dependency Injection System**: When you call `app.dependency`, FastAPI generates a dependency object that represents the dependency you specified.\n\n### 3. **Usage Example**\n   ```python\n   from fastapi import Depends\n\n   # Define a dependency\n   @Dep",
+            "retrieved_chunks": [
+                {
+                    "text": "Actually, all (or most) of the web frameworks work in this same way. They are called by your framework (in this case, FastAPI). With the Dependency Injection system, you can also tell FastAPI that your path operation function also \"depends\" on something else that should be executed before your path operation function, and FastAPI will take care of executing it and \"injecting\" the results. Other common terms for this same idea of \"dependency injection\" are: resources providers services injectables components FastAPI plug-ins Integrations and \"plug-ins\" can be built using the Dependency Injection system. But in fact, there is actually no need to create \"plug-ins\", as by using dependencies it's possible to declare an infinite number of integrations and interactions that become available to your path operation functions. And dependencies can be created in a very simple and intuitive way that allows you to just import the Python packages you need, and integrate them with your API functions in a couple of lines of code, literally.",
+                    "source": "tutorial/dependencies/index.md",
+                    "rrf_score": 0.03128054740957967,
+                    "rerank_score": 8.309770584106445
+                },
+                {
+                    "text": "Dependencies FastAPI has a very powerful but intuitive <dfn title=\"also known as components, resources, providers, services, injectables\"Dependency Injection</dfn system. It is designed to be very simple to use, and to make it very easy for any developer to integrate other components with FastAPI. What is \"Dependency Injection\" \"Dependency Injection\" means, in programming, that there is a way for your code (in this case, your path operation functions) to declare things that it requires to work and use: \"dependencies\".",
+                    "source": "tutorial/dependencies/index.md",
+                    "rrf_score": 0.03131881575727918,
+                    "rerank_score": 7.324178695678711
+                },
+                {
+                    "text": "You will see examples of this in the next chapters, about relational and NoSQL databases, security, etc. FastAPI compatibility The simplicity of the dependency injection system makes FastAPI compatible with: all the relational databases NoSQL databases external packages external APIs authentication and authorization systems API usage monitoring systems response data injection systems etc. Simple and Powerful Although the hierarchical dependency injection system is very simple to define and use, it's still very powerful.",
+                    "source": "tutorial/dependencies/index.md",
+                    "rrf_score": 0.031009615384615385,
+                    "rerank_score": 5.812218189239502
+                },
+                {
+                    "text": "It will be so simple that it is not very useful, for now. But this way we can focus on how the Dependency Injection system works. Create a dependency, or \"dependable\" Let's first focus on the dependency. It is just a function that can take all the same parameters that a path operation function can take: That's it. And it has the same shape and structure that all your path operation functions have. You can think of it as a path operation function without the \"decorator\" (without the @app.get(\"/some-path\")).",
+                    "source": "tutorial/dependencies/index.md",
+                    "rrf_score": 0.014492753623188406,
+                    "rerank_score": 5.164481163024902
+                },
+                {
+                    "text": "Plus all the security features from Starlette (including session cookies). All built as reusable tools and components that are easy to integrate with your systems, data stores, relational and NoSQL databases, etc. Dependency Injection FastAPI includes an extremely easy to use, but extremely powerful <dfn title='also known as \"components\", \"resources\", \"services\", \"providers\"'<strongDependency Injection</strong</dfn system.",
+                    "source": "features.md",
+                    "rrf_score": 0.014285714285714285,
+                    "rerank_score": 4.913116455078125
+                }
+            ],
+            "faithfulness": {
+                "score": 1,
+                "reasoning": "Simulated faithfulness (no API key)"
+            },
+            "relevance": {
+                "score": 5,
+                "reasoning": "Simulated relevance (no API key)"
+            }
+        },
+        {
+            "question_id": 2,
+            "question": "What does FastAPI's Depends function do?",
+            "category": "dependencies",
+            "expected_sources": [
+                "tutorial/dependencies/index.md"
+            ],
+            "expected_answer": "Depends tells FastAPI which callable a path operation function depends on. You pass the callable to Depends() without calling it directly. Whenever a request arrives, FastAPI calls that dependency function with the correct parameters, gets its return value, and assigns it to the parameter in the path operation function. Depends is used the same way as Body or Query in function parameters, but it takes a single argument — the dependency callable.",
+            "retrieved_sources": [
+                "tutorial/dependencies/index.md",
+                "advanced/security/oauth2-scopes.md",
+                "security/security/oauth2-scopes.md"
+            ],
+            "generated_answer": "FastAPI's Depends function is used to declare dependencies for its path operations. It allows FastAPI to manage the execution of these operations based on the values passed to them.",
+            "retrieved_chunks": [
+                {
+                    "text": "And that function takes parameters in the same way that path operation functions do. /// tip You'll see what other \"things\", apart from functions, can be used as dependencies in the next chapter. /// Whenever a new request arrives, FastAPI will take care of: Calling your dependency (\"dependable\") function with the correct parameters. Assign that result to the parameter in your path operation function.",
+                    "source": "tutorial/dependencies/index.md",
+                    "rrf_score": 0.03131881575727918,
+                    "rerank_score": 6.9593095779418945
+                },
+                {
+                    "text": "/// /// note | Technical Details Security is actually a subclass of Depends, and it has just one extra parameter that we'll see later. But by using Security instead of Depends, FastAPI will know that it can declare security scopes, use them internally, and document the API with OpenAPI. But when you import Query, Path, Depends, Security and others from fastapi, those are actually functions that return special classes.",
+                    "source": "advanced/security/oauth2-scopes.md",
+                    "rrf_score": 0.015625,
+                    "rerank_score": 6.361865997314453
+                },
+                {
+                    "text": "/// /// note | Technical Details Security is actually a subclass of Depends, and it has just one extra parameter that we'll see later. But by using Security instead of Depends, FastAPI will know that it can declare security scopes, use them internally, and document the API with OpenAPI. But when you import Query, Path, Depends, Security and others from fastapi, those are actually functions that return special classes.",
+                    "source": "security/security/oauth2-scopes.md",
+                    "rrf_score": 0.015384615384615385,
+                    "rerank_score": 6.361865997314453
+                },
+                {
+                    "text": "For this, we import and use Security from fastapi. You can use Security to declare dependencies (just like Depends), but Security also receives a parameter scopes with a list of scopes (strings). In this case, we pass a dependency function getcurrentactiveuser to Security (the same way we would do with Depends). But we also pass a list of scopes, in this case with just one scope: items (it could have more).",
+                    "source": "advanced/security/oauth2-scopes.md",
+                    "rrf_score": 0.029551337359792925,
+                    "rerank_score": 5.8102827072143555
+                },
+                {
+                    "text": "For this, we import and use Security from fastapi. You can use Security to declare dependencies (just like Depends), but Security also receives a parameter scopes with a list of scopes (strings). In this case, we pass a dependency function getcurrentactiveuser to Security (the same way we would do with Depends). But we also pass a list of scopes, in this case with just one scope: items (it could have more).",
+                    "source": "security/security/oauth2-scopes.md",
+                    "rrf_score": 0.029116045245077504,
+                    "rerank_score": 5.8102827072143555
+                }
+            ],
+            "faithfulness": {
+                "score": 1,
+                "reasoning": "Simulated faithfulness (no API key)"
+            },
+            "relevance": {
+                "score": 5,
+                "reasoning": "Simulated relevance (no API key)"
+            }
+        },
+        {
+            "question_id": 3,
+            "question": "How can a Python class be used as a dependency in FastAPI?",
+            "category": "dependencies",
+            "expected_sources": [
+                "tutorial/dependencies/classes-as-dependencies.md"
+            ],
+            "expected_answer": "A Python class can be used as a dependency because a class is callable — calling it creates an instance. FastAPI checks that a dependency is a callable, then inspects its parameters (from __init__) the same way it does for path operation functions. When the dependency is resolved, FastAPI calls the class, creates an instance, and injects that instance into the path operation function. As a shortcut, if the type annotation already names the class, you can write Depends() with no argument and FastAPI will infer the class from the type annotation.",
+            "retrieved_sources": [
+                "tutorial/dependencies/classes-as-dependencies.md",
+                "advanced/advanced-dependencies.md",
+                "tutorial/dependencies/dependencies-with-yield.md",
+                "reference/response.md",
+                "reference/request.md"
+            ],
+            "generated_answer": "In FastAPI, a Python class can be used as a dependency by declaring it as a callable within a dependency function. This allows FastAPI to analyze the parameters passed to the dependency and determine how they should be processed based on the type of the dependency. Specifically, when FastAPI encounters a callable dependency, it will first check if it is a callable (either a function, class, or other callable). If it is, FastAPI will attempt to match the parameters of the callable against the parameters expected by the dependency function. The matching process involves checking for the presence of specific attributes or methods within the callable, which determines whether the parameters should be passed through or modified according to the requirements specified in the dependency function.",
+            "retrieved_chunks": [
+                {
+                    "text": "Classes as dependencies You might notice that to create an instance of a Python class, you use that same syntax. For example: Python class Cat: def init(self, name: str): self.name = name fluffy = Cat(name=\"Mr Fluffy\") In this case, fluffy is an instance of the class Cat. And to create fluffy, you are \"calling\" Cat. Then, in FastAPI, you could use a Python class as a dependency. What FastAPI actually checks is that it is a \"callable\" (function, class or anything else) and the parameters defined. If you pass a \"callable\" as a dependency in FastAPI, it will analyze the parameters for that \"callable\", and process them in the same way as the parameters for a path operation function. That also applies to callables with no parameters at all.",
+                    "source": "tutorial/dependencies/classes-as-dependencies.md",
+                    "rrf_score": 0.03252247488101534,
+                    "rerank_score": 8.760194778442383
+                },
+                {
+                    "text": "A \"callable\" instance In Python there's a way to make an instance of a class a \"callable\". Not the class itself (which is already a callable), but an instance of that class. To do that, we declare a method call: In this case, this call is what FastAPI will use to check for additional parameters and sub-dependencies, and this is what will be called to pass a value to the parameter in your path operation function later. Parameterize the instance And now, we can use init to declare the parameters of the instance that we can use to \"parameterize\" the dependency: In this case, FastAPI won't ever touch or care about init, we will use it directly in our code.",
+                    "source": "advanced/advanced-dependencies.md",
+                    "rrf_score": 0.031754032258064516,
+                    "rerank_score": 6.349547386169434
+                },
+                {
+                    "text": "/// In Python, you can create Context Managers by creating a class with two methods: enter() and exit(). You can also use them inside of FastAPI dependencies with yield by using with or async with statements inside of the dependency function: /// tip Another way to create a context manager is with: @contextlib.contextmanager or @contextlib.asynccontextmanager using them to decorate a function with a single yield. That's what FastAPI uses internally for dependencies with yield. But you don't have to use the decorators for FastAPI dependencies (and you shouldn't).",
+                    "source": "tutorial/dependencies/dependencies-with-yield.md",
+                    "rrf_score": 0.028006267136701922,
+                    "rerank_score": 6.186873435974121
+                },
+                {
+                    "text": "Response class You can declare a parameter in a path operation function or dependency to be of type Response and then you can set data for the response like headers or cookies. You can also use it directly to create an instance of it and return it from your path operations. Read more about it in the FastAPI docs about returning a custom Response You can import it directly from fastapi: python from fastapi import Response ::: fastapi.Response",
+                    "source": "reference/response.md",
+                    "rrf_score": 0.014925373134328358,
+                    "rerank_score": 5.9715471267700195
+                },
+                {
+                    "text": "Request class You can declare a parameter in a path operation function or dependency to be of type Request and then you can access the raw request object directly, without any validation, etc. Read more about it in the FastAPI docs about using Request directly You can import it directly from fastapi: python from fastapi import Request /// tip When you want to define dependencies that should be compatible with both HTTP and WebSockets, you can define a parameter that takes an HTTPConnection instead of a Request or a WebSocket.",
+                    "source": "reference/request.md",
+                    "rrf_score": 0.015384615384615385,
+                    "rerank_score": 5.852884292602539
+                }
+            ],
+            "faithfulness": {
+                "score": 1,
+                "reasoning": "Simulated faithfulness (no API key)"
+            },
+            "relevance": {
+                "score": 5,
+                "reasoning": "Simulated relevance (no API key)"
+            }
+        },
+        {
+            "question_id": 4,
+            "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
+            "category": "advanced-dependencies",
+            "expected_sources": [
+                "tutorial/dependencies/classes-as-dependencies.md",
+                "advanced/advanced-dependencies.md"
+            ],
+            "expected_answer": "FastAPI supports parameterized dependencies through callable class instances. You define a class with __init__ to store configuration parameters, and a __call__ method that FastAPI will use to inspect and resolve the dependency. An instance of the class (not the class itself) is passed to Depends(). When resolving, FastAPI calls the instance like a function, passing request parameters to __call__ and injecting its return value into the path operation function. This allows a single class to produce different dependency behaviors depending on how the instance was initialized.",
+            "retrieved_sources": [
+                "advanced/advanced-dependencies.md",
+                "tutorial/dependencies/classes-as-dependencies.md"
+            ],
+            "generated_answer": "To use a class with `__init__` and `__call__` methods as a parameterized dependency in FastAPI using `Depends()`, you need to ensure that the class has these methods properly implemented. Here’s how you can achieve this:\n\n### Step-by-Step Guide\n\n1. **Define Your Class**: Ensure your class has `__init__` and `__call__` methods. These methods should handle initialization and invocation respectively.\n\n2. **Use `Depends()`**: When creating a dependency in FastAPI, specify the class that needs to be initialized and invoked.\n\n3. **Pass the Instance**: Pass the instantiated class as the dependency when calling the function.\n\nHere's an example demonstrating how to implement this:\n\n```python\nfrom fastapi import Depends, APIRouter, HTTPException\nfrom typing import Optional\n\n# Define your class with __init__ and __call__ methods\nclass MyDependency:\n    def __init__(self, param1: str, param2: int):\n        self.param1 = param1\n        self.param2 = param2\n\n    def __call__(self, request: dict):\n        # Method implementation here\n        return {\"param1\": self.param1, \"param2\": self.param2}\n\nrouter",
+            "retrieved_chunks": [
+                {
+                    "text": "A \"callable\" instance In Python there's a way to make an instance of a class a \"callable\". Not the class itself (which is already a callable), but an instance of that class. To do that, we declare a method call: In this case, this call is what FastAPI will use to check for additional parameters and sub-dependencies, and this is what will be called to pass a value to the parameter in your path operation function later. Parameterize the instance And now, we can use init to declare the parameters of the instance that we can use to \"parameterize\" the dependency: In this case, FastAPI won't ever touch or care about init, we will use it directly in our code.",
+                    "source": "advanced/advanced-dependencies.md",
+                    "rrf_score": 0.01639344262295082,
+                    "rerank_score": 6.076984405517578
+                },
+                {
+                    "text": "Classes as dependencies You might notice that to create an instance of a Python class, you use that same syntax. For example: Python class Cat: def init(self, name: str): self.name = name fluffy = Cat(name=\"Mr Fluffy\") In this case, fluffy is an instance of the class Cat. And to create fluffy, you are \"calling\" Cat. Then, in FastAPI, you could use a Python class as a dependency. What FastAPI actually checks is that it is a \"callable\" (function, class or anything else) and the parameters defined. If you pass a \"callable\" as a dependency in FastAPI, it will analyze the parameters for that \"callable\", and process them in the same way as the parameters for a path operation function. That also applies to callables with no parameters at all.",
+                    "source": "tutorial/dependencies/classes-as-dependencies.md",
+                    "rrf_score": 0.030834914611005692,
+                    "rerank_score": 5.604470252990723
+                },
+                {
+                    "text": "The same as it would be for path operation functions with no parameters. Then, we can change the dependency \"dependable\" commonparameters from above to the class CommonQueryParams: Pay attention to the init method used to create the instance of the class: ...it has the same parameters as our previous commonparameters: Those parameters are what FastAPI will use to \"solve\" the dependency. In both cases, it will have: An optional q query parameter that is a str.",
+                    "source": "tutorial/dependencies/classes-as-dependencies.md",
+                    "rrf_score": 0.014925373134328358,
+                    "rerank_score": 4.754000663757324
+                },
+                {
+                    "text": "Create an instance We could create an instance of this class with: And that way we are able to \"parameterize\" our dependency, that now has \"bar\" inside of it, as the attribute checker.fixedcontent. Use the instance as a dependency Then, we could use this checker in a Depends(checker), instead of Depends(FixedContentQueryChecker), because the dependency is the instance, checker, not the class itself.",
+                    "source": "advanced/advanced-dependencies.md",
+                    "rrf_score": 0.015151515151515152,
+                    "rerank_score": 2.8478527069091797
+                },
+                {
+                    "text": "A skip query parameter that is an int, with a default of 0. A limit query parameter that is an int, with a default of 100. In both cases the data will be converted, validated, documented on the OpenAPI schema, etc. Use it Now you can declare your dependency using this class. FastAPI calls the CommonQueryParams class. This creates an \"instance\" of that class and the instance will be passed as the parameter commons to your function.",
+                    "source": "tutorial/dependencies/classes-as-dependencies.md",
+                    "rrf_score": 0.027783137179239824,
+                    "rerank_score": 2.6846868991851807
+                }
+            ],
+            "faithfulness": {
+                "score": 1,
+                "reasoning": "Simulated faithfulness (no API key)"
+            },
+            "relevance": {
+                "score": 5,
+                "reasoning": "Simulated relevance (no API key)"
+            }
+        },
+        {
+            "question_id": 5,
+            "question": "How does FastAPI support asynchronous path operation functions?",
+            "category": "async",
+            "expected_sources": [
+                "async.md"
+            ],
+            "expected_answer": "FastAPI supports both async def and normal def path operation functions. If a library requires await, declare the function with async def so you can use await inside it. If a library does not support async, use a normal def — FastAPI will run it in an external threadpool so it does not block the server. You can mix async def and def freely across path operations. FastAPI handles both correctly and remains highly performant in either case.",
+            "retrieved_sources": [
+                "async.md",
+                "advanced/dataclasses.md",
+                "advanced/async-tests.md"
+            ],
+            "generated_answer": "FastAPI supports asynchronous path operation functions through the use of `async def` instead of `def`. This allows for asynchronous execution within the same request handling process, enabling faster responses compared to synchronous operations. The key points are:\n\n1. **Asynchronous Execution**: By default, FastAPI runs path operation functions in an external threadpool, which is then awaited.\n2. **Async Functions**: These functions can only be called inside of functions defined with `async def`.\n3. **Testing Support**: You can now call other asynchronous functions in your tests, similar to calling them elsewhere in your code.\n\nThis approach significantly improves performance by leveraging the capabilities of the underlying asynchronous frameworks like asyncio and trio, while maintaining the ability to handle complex asynchronous logic within your FastAPI routes.",
+            "retrieved_chunks": [
+                {
+                    "text": "--- If you just don't know, use normal def. --- Note: You can mix def and async def in your path operation functions as much as you need and define each one using the best option for you. FastAPI will do the right thing with them. Anyway, in any of the cases above, FastAPI will still work asynchronously and be extremely fast. But by following the steps above, it will be able to do some performance optimizations.",
+                    "source": "async.md",
+                    "rrf_score": 0.016129032258064516,
+                    "rerank_score": 6.2749481201171875
+                },
+                {
+                    "text": "Notice that this path operation function uses regular def instead of async def. As always, in FastAPI you can combine def and async def as needed. If you need a refresher about when to use which, check out the section \"In a hurry?\" in the docs about async and await. This path operation function is not returning dataclasses (although it could), but a list of dictionaries with internal data. FastAPI will use the responsemodel parameter (that includes dataclasses) to convert the response.",
+                    "source": "advanced/dataclasses.md",
+                    "rrf_score": 0.015625,
+                    "rerank_score": 5.984589576721191
+                },
+                {
+                    "text": "These are very technical details of how FastAPI works underneath. If you have quite some technical knowledge (coroutines, threads, blocking, etc.) and are curious about how FastAPI handles async def vs normal def, go ahead. /// Path operation functions When you declare a path operation function with normal def instead of async def, it is run in an external threadpool that is then awaited, instead of being called directly (as it would block the server). If you are coming from another async framework that does not work in the way described above and you are used to defining trivial compute-only path operation functions with plain def for a tiny performance gain (about 100 nanoseconds), please note that in FastAPI the effect would be quite opposite. In these cases, it's better to use async def unless your path operation functions use code that performs blocking <abbr title=\"Input/Output: disk reading or writing, network communications.\"I/O</abbr.",
+                    "source": "async.md",
+                    "rrf_score": 0.03252247488101534,
+                    "rerank_score": 5.074063301086426
+                },
+                {
+                    "text": "So, functions with async def can only be called inside of functions defined with async def too. So, about the egg and the chicken, how do you call the first async function? If you are working with FastAPI you don't have to worry about that, because that \"first\" function will be your path operation function, and FastAPI will know how to do the right thing. But if you want to use async / await without FastAPI, you can do it as well. Write your own async code Starlette (and FastAPI) are based on AnyIO, which makes it compatible with both Python's standard library asyncio and Trio. In particular, you can directly use AnyIO for your advanced concurrency use cases that require more advanced patterns in your own code. And even if you were not using FastAPI, you could also write your own async applications with AnyIO to be highly compatible and get its benefits (e.g.",
+                    "source": "async.md",
+                    "rrf_score": 0.02532051282051282,
+                    "rerank_score": 4.34136962890625
+                },
+                {
+                    "text": "/// Other Asynchronous Function Calls As the testing function is now asynchronous, you can now also call (and await) other async functions apart from sending requests to your FastAPI application in your tests, exactly as you would call them anywhere else in your code. /// tip If you encounter a RuntimeError: Task attached to a different loop when integrating asynchronous function calls in your tests (e.g.",
+                    "source": "advanced/async-tests.md",
+                    "rrf_score": 0.028850145288501453,
+                    "rerank_score": 3.468830108642578
+                }
+            ],
+            "faithfulness": {
+                "score": 1,
+                "reasoning": "Simulated faithfulness (no API key)"
+            },
+            "relevance": {
+                "score": 5,
+                "reasoning": "Simulated relevance (no API key)"
+            }
+        }
+    ]
+}
