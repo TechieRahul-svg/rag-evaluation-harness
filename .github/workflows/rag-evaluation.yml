@@ -4,11 +4,15 @@ on:
   push:
     branches:
       - main
+<<<<<<< HEAD
 
+=======
+>>>>>>> d452489 (Modified)
   pull_request:
     branches:
       - main
 
+<<<<<<< HEAD
 
 jobs:
 
@@ -93,3 +97,33 @@ jobs:
       - name: Check RAG Quality
         run: |
           python src/evaluation/ci_evaluate.py
+=======
+jobs:
+  rag-evaluation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Build Vector Store
+      run: |
+        python src/vectorstore/build_vectorstore.py
+
+    - name: Run RAG Evaluation
+      run: |
+        python src/evaluation/run_retrieval_evaluation.py
+
+    - name: Check Quality Threshold
+      run: |
+        python src/evaluation/ci_evaluate.py
+>>>>>>> d452489 (Modified)
