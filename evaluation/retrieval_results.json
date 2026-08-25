@@ -63,8 +63,8 @@
                 "question_id": 4,
                 "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
                 "expected_sources": [
-                    "advanced/advanced-dependencies.md",
-                    "tutorial/dependencies/classes-as-dependencies.md"
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md"
                 ],
                 "retrieved_sources": [
                     "advanced/advanced-dependencies.md",
@@ -98,8 +98,8 @@
                 "question_id": 6,
                 "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
                 "expected_sources": [
-                    "tutorial/path-params-numeric-validations.md",
-                    "tutorial/path-params.md"
+                    "tutorial/path-params.md",
+                    "tutorial/path-params-numeric-validations.md"
                 ],
                 "retrieved_sources": [
                     "advanced/dataclasses.md",
@@ -927,8 +927,8 @@
                 "question_id": 4,
                 "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
                 "expected_sources": [
-                    "advanced/advanced-dependencies.md",
-                    "tutorial/dependencies/classes-as-dependencies.md"
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md"
                 ],
                 "retrieved_sources": [
                     "tutorial/dependencies/classes-as-dependencies.md",
@@ -962,8 +962,8 @@
                 "question_id": 6,
                 "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
                 "expected_sources": [
-                    "tutorial/path-params-numeric-validations.md",
-                    "tutorial/path-params.md"
+                    "tutorial/path-params.md",
+                    "tutorial/path-params-numeric-validations.md"
                 ],
                 "retrieved_sources": [
                     "tutorial/path-params-numeric-validations.md",
@@ -1791,8 +1791,8 @@
                 "question_id": 4,
                 "question": "How do you use a class with __init__ and __call__ methods as a parameterized dependency in FastAPI using Depends()?",
                 "expected_sources": [
-                    "advanced/advanced-dependencies.md",
-                    "tutorial/dependencies/classes-as-dependencies.md"
+                    "tutorial/dependencies/classes-as-dependencies.md",
+                    "advanced/advanced-dependencies.md"
                 ],
                 "retrieved_sources": [
                     "advanced/advanced-dependencies.md",
@@ -1826,8 +1826,8 @@
                 "question_id": 6,
                 "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
                 "expected_sources": [
-                    "tutorial/path-params-numeric-validations.md",
-                    "tutorial/path-params.md"
+                    "tutorial/path-params.md",
+                    "tutorial/path-params-numeric-validations.md"
                 ],
                 "retrieved_sources": [
                     "tutorial/path-params-numeric-validations.md",

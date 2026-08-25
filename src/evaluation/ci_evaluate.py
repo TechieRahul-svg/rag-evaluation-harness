@@ -1,6 +1,9 @@
 import json
 import sys
 
+# Ensure UTF-8 output on Windows terminals
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 RESULT_FILE = "evaluation/retrieval_results.json"
 
@@ -15,6 +18,7 @@ def main():
         encoding="utf-8"
     ) as f:
         results = json.load(f)
+
 
 
     # Change this according to your best retriever
