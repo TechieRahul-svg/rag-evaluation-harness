@@ -98,8 +98,8 @@
                 "question_id": 6,
                 "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
                 "expected_sources": [
-                    "tutorial/path-params.md",
-                    "tutorial/path-params-numeric-validations.md"
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md"
                 ],
                 "retrieved_sources": [
                     "advanced/dataclasses.md",
@@ -116,8 +116,8 @@
                 "question_id": 7,
                 "question": "How does FastAPI handle request bodies using Pydantic models?",
                 "expected_sources": [
-                    "tutorial/body-multiple-params.md",
-                    "tutorial/body.md"
+                    "tutorial/body.md",
+                    "tutorial/body-multiple-params.md"
                 ],
                 "retrieved_sources": [
                     "tutorial/body.md",
@@ -158,7 +158,7 @@
                     "tutorial/security/simple-oauth2.md",
                     "tutorial/security/first-steps.md",
                     "tutorial/security/first-steps.md",
-                    "advanced/security/oauth2-scopes.md"
+                    "security/security/oauth2-scopes.md"
                 ],
                 "hit_at_1": true,
                 "hit_at_3": true,
@@ -962,8 +962,8 @@
                 "question_id": 6,
                 "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
                 "expected_sources": [
-                    "tutorial/path-params.md",
-                    "tutorial/path-params-numeric-validations.md"
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md"
                 ],
                 "retrieved_sources": [
                     "tutorial/path-params-numeric-validations.md",
@@ -980,8 +980,8 @@
                 "question_id": 7,
                 "question": "How does FastAPI handle request bodies using Pydantic models?",
                 "expected_sources": [
-                    "tutorial/body-multiple-params.md",
-                    "tutorial/body.md"
+                    "tutorial/body.md",
+                    "tutorial/body-multiple-params.md"
                 ],
                 "retrieved_sources": [
                     "tutorial/body.md",
@@ -1826,8 +1826,8 @@
                 "question_id": 6,
                 "question": "How do you declare a path parameter like /items/{item_id} in FastAPI, and how does type annotation work for it?",
                 "expected_sources": [
-                    "tutorial/path-params.md",
-                    "tutorial/path-params-numeric-validations.md"
+                    "tutorial/path-params-numeric-validations.md",
+                    "tutorial/path-params.md"
                 ],
                 "retrieved_sources": [
                     "tutorial/path-params-numeric-validations.md",
@@ -1844,8 +1844,8 @@
                 "question_id": 7,
                 "question": "How does FastAPI handle request bodies using Pydantic models?",
                 "expected_sources": [
-                    "tutorial/body-multiple-params.md",
-                    "tutorial/body.md"
+                    "tutorial/body.md",
+                    "tutorial/body-multiple-params.md"
                 ],
                 "retrieved_sources": [
                     "advanced/path-operation-advanced-configuration.md",

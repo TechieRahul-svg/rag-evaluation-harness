@@ -1,7 +1,9 @@
+import os
+from pathlib import Path
 import chromadb
 
-
-DB_PATH = "data/vectorstore"
+ROOT = Path(__file__).resolve().parents[2]
+DB_PATH = str(ROOT / "data" / "vectorstore")
 
 
 client = chromadb.PersistentClient(

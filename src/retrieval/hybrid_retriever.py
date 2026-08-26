@@ -15,7 +15,14 @@ class HybridRetriever:
     def __init__(self, strategy="semantic", db_path="data/vectorstore", k_constant=60):
         print(f"Initializing HybridRetriever for strategy '{strategy}'...")
         self.strategy = strategy
-        self.db_path = db_path
+        self.root = Path(__file__).resolve().parents[2]
+        
+        # Ensure db_path is absolute relative to project root
+        if not os.path.isabs(db_path):
+            self.db_path = str(self.root / db_path)
+        else:
+            self.db_path = db_path
+            
         self.k_constant = k_constant
         
         # Load ChromaDB VectorStore
@@ -28,11 +35,11 @@ class HybridRetriever:
         self.collection_name = collection_names[strategy]
         self.collection = self.client.get_collection(name=self.collection_name)
         
-        # Load raw chunk data for BM25
+        # Load raw chunk data for BM25 with absolute paths
         chunk_files = {
-            "fixed": "data/processed/fixed_chunks.json",
-            "recursive": "data/processed/recursive_chunks.json",
-            "semantic": "data/processed/semantic_chunks.json"
+            "fixed": str(self.root / "data" / "processed" / "fixed_chunks.json"),
+            "recursive": str(self.root / "data" / "processed" / "recursive_chunks.json"),
+            "semantic": str(self.root / "data" / "processed" / "semantic_chunks.json")
         }
         self.chunk_file = chunk_files[strategy]
         with open(self.chunk_file, encoding="utf-8") as f:

@@ -1,16 +1,18 @@
+import os
+from pathlib import Path
 import json
 import chromadb
 
 from embedder import Embedder
 
-
-DB_PATH = "data/vectorstore"
+ROOT = Path(__file__).resolve().parents[2]
+DB_PATH = str(ROOT / "data" / "vectorstore")
 
 
 DATASETS = {
-    "rag_fixed": "data/processed/fixed_chunks.json",
-    "rag_recursive": "data/processed/recursive_chunks.json",
-    "rag_semantic": "data/processed/semantic_chunks.json"
+    "rag_fixed": str(ROOT / "data" / "processed" / "fixed_chunks.json"),
+    "rag_recursive": str(ROOT / "data" / "processed" / "recursive_chunks.json"),
+    "rag_semantic": str(ROOT / "data" / "processed" / "semantic_chunks.json")
 }
 
 
