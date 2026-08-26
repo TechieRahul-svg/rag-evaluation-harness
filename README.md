@@ -525,15 +525,7 @@ Through this project:
 
 ---
 
-# 👨‍💻 Author
 
-**Rahul Panda**
-
-B.Tech Computer Science Engineering
-
-Interested in:
-- Artificial Intelligence
-- Machine Learning
 - Generative AI
 - Retrieval-Augmented Generation
 
