@@ -18,38 +18,78 @@ jobs:
 
     steps:
 
-      # 1. Download repository
+      # ------------------------------------------------
+      # 1. Checkout repository
+      # ------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
 
+      # ------------------------------------------------
       # 2. Setup Python
+      # ------------------------------------------------
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
 
+      # ------------------------------------------------
       # 3. Install dependencies
+      # ------------------------------------------------
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
 
-      # 4. Build ChromaDB collections
+      # ------------------------------------------------
+      # 4. Show project structure
+      # ------------------------------------------------
+      - name: Check project files
+        run: |
+          pwd
+          ls -la
+          echo "Processed data:"
+          ls -la data/processed
+
+
+      # ------------------------------------------------
+      # 5. Build ChromaDB
+      # ------------------------------------------------
       - name: Build Vector Database
         run: |
           python src/vectorstore/build_vectorstore.py
 
 
-      # 5. Run retrieval benchmark
+      # ------------------------------------------------
+      # 6. Verify ChromaDB collections
+      # ------------------------------------------------
+      - name: Verify Vector Database
+        run: |
+          python src/vectorstore/check_vectorstore.py
+
+
+      # ------------------------------------------------
+      # 7. Show ChromaDB files
+      # ------------------------------------------------
+      - name: Inspect Vector Database
+        run: |
+          echo "Vectorstore directory:"
+          find data/vectorstore -maxdepth 2 -type f | head -50
+
+
+      # ------------------------------------------------
+      # 8. Run retrieval evaluation
+      # ------------------------------------------------
       - name: Run Retrieval Evaluation
         run: |
           python src/evaluation/run_retrieval_evaluation.py
 
 
-      # 6. Check quality threshold
+      # ------------------------------------------------
+      # 9. Check quality threshold
+      # ------------------------------------------------
       - name: Check RAG Quality
         run: |
           python src/evaluation/ci_evaluate.py
