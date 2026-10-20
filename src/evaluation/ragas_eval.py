@@ -2,10 +2,12 @@
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 import httpx
 from dotenv import load_dotenv
+
 
 # Ensure src modules are in Python search path
 ROOT = Path(__file__).resolve().parents[2]
@@ -33,7 +35,7 @@ class RagasEvaluator:
         system_prompt: str,
         user_prompt: str,
     ) -> dict:
-        """Query the Groq judge and validate its JSON response."""
+        """Query the Groq judge, retry transient errors, and validate JSON."""
 
         if not self.api_key:
             return {
@@ -42,44 +44,128 @@ class RagasEvaluator:
                 "status": "skipped",
             }
 
+
         payload = {
             "model": GROQ_MODEL,
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
             ],
-            "response_format": {"type": "json_object"},
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "judge_evaluation",
+                    "strict": True,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "score": {"type": "number"},
+                            "reasoning": {"type": "string"},
+                        },
+                        "required": ["score", "reasoning"],
+                        "additionalProperties": False,
+                    },
+                },
+            },
+            "reasoning_effort": "low",
             "temperature": 0.0,
-            "max_tokens": 512,
+            "max_completion_tokens": 1024,
         }
+
 
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
         }
 
-        try:
-            response = httpx.post(
-                GROQ_API_URL,
-                json=payload,
-                headers=headers,
-                timeout=30.0,
-            )
-            response.raise_for_status()
+        max_retries = 3
 
-            data = response.json()
+        try:
+            data = None
+
+            for attempt in range(max_retries + 1):
+                response = httpx.post(
+                    GROQ_API_URL,
+                    json=payload,
+                    headers=headers,
+                    timeout=30.0,
+                )
+
+                is_rate_limited = response.status_code == 429
+                is_json_validation_error = (
+                    response.status_code == 400
+                    and "json_validate_failed" in response.text
+                )
+
+                should_retry = (
+                    is_rate_limited or is_json_validation_error
+                )
+
+                if should_retry and attempt < max_retries:
+                    if is_rate_limited:
+                        retry_after = response.headers.get("retry-after")
+                        wait_seconds = 5.0
+
+                        if retry_after:
+                            try:
+                                wait_seconds = float(retry_after)
+                            except ValueError:
+                                pass
+
+                        wait_seconds = max(
+                            1.0, min(wait_seconds, 30.0)
+                        )
+                        error_type = "rate limit"
+                    else:
+                        wait_seconds = min(
+                            2.0 * (attempt + 1), 6.0
+                        )
+                        error_type = "invalid JSON response"
+
+                    print(
+                        f"[WARNING] Groq {error_type}. "
+                        f"Retrying in {wait_seconds:.1f}s "
+                        f"({attempt + 1}/{max_retries})..."
+                    )
+
+                    time.sleep(wait_seconds)
+                    continue
+
+                # Raise for non-retryable errors or exhausted retries.
+                response.raise_for_status()
+                data = response.json()
+                break
+
+            if data is None:
+                raise ValueError(
+                    "Groq did not return a response after retries."
+                )
+
             content = data["choices"][0]["message"]["content"]
+
+            if not isinstance(content, str) or not content.strip():
+                raise ValueError(
+                    "Groq returned an empty judge response."
+                )
+
             result = json.loads(content)
 
             if not isinstance(result, dict):
-                raise ValueError("Judge response must be a JSON object.")
+                raise ValueError(
+                    "Judge response must be a JSON object."
+                )
 
             if "reasoning" not in result:
-                raise ValueError("Judge response is missing 'reasoning'.")
+                raise ValueError(
+                    "Judge response is missing 'reasoning'."
+                )
 
             score = result.get("score")
 
-            if isinstance(score, bool) or not isinstance(score, (int, float)):
+            if (
+                isinstance(score, bool)
+                or not isinstance(score, (int, float))
+            ):
                 raise ValueError("Judge score must be numeric.")
 
             return {
@@ -96,22 +182,34 @@ class RagasEvaluator:
             TypeError,
             ValueError,
         ) as exc:
-            print(f"[ERROR] Judge evaluation failed: {exc}")
+            if isinstance(exc, httpx.HTTPStatusError):
+                print(
+                    f"[ERROR] Groq response: "
+                    f"{exc.response.text[:1500]}"
+                )
+            else:
+                print(f"[ERROR] Judge evaluation failed: {exc}")
+
             return {
                 "score": None,
                 "reasoning": f"Judge evaluation failed: {exc}",
                 "status": "failed",
             }
 
-    def evaluate_faithfulness(self, context: str, answer: str) -> dict:
-        """Score whether the answer is grounded in the retrieved context."""
+    def evaluate_faithfulness(
+        self,
+        context: str,
+        answer: str,
+    ) -> dict:
+        """Score whether the answer is grounded in retrieved context."""
 
         system_prompt = (
-            "You are a rigorous technical RAG auditor. Evaluate whether the "
-            "generated answer is fully grounded in the provided context and "
-            "contains no unsupported claims. Return a JSON object with "
+            "You are a rigorous technical RAG auditor. Evaluate whether "
+            "the generated answer is fully grounded in the provided context "
+            "and contains no unsupported claims. Return a JSON object with "
             "'score' (1 for fully faithful, 0 for ungrounded claims or "
-            "hallucinations) and 'reasoning' (a brief explanation)."
+            "hallucinations) and 'reasoning' (a brief explanation). "
+            "Return only a valid JSON object."
         )
 
         user_prompt = (
@@ -119,29 +217,43 @@ class RagasEvaluator:
             f"GENERATED ANSWER:\n{answer}"
         )
 
-        result = self._query_groq_judge(system_prompt, user_prompt)
+        result = self._query_groq_judge(
+            system_prompt,
+            user_prompt,
+        )
 
         if result["status"] == "success":
             score = result["score"]
-            if isinstance(score, bool) or score not in (0, 1):
+
+            if (
+                isinstance(score, bool)
+                or score not in (0, 1)
+            ):
                 return {
                     "score": None,
-                    "reasoning": "Invalid faithfulness score; expected 0 or 1.",
+                    "reasoning": (
+                        "Invalid faithfulness score; expected 0 or 1."
+                    ),
                     "status": "failed",
                 }
 
         return result
 
-    def evaluate_relevance(self, question: str, answer: str) -> dict:
+    def evaluate_relevance(
+        self,
+        question: str,
+        answer: str,
+    ) -> dict:
         """Score how well the answer addresses the question, from 1 to 5."""
 
         system_prompt = (
-            "You are a technical RAG auditor. Evaluate how well the generated "
-            "answer addresses the user's question. Rate it from 1 to 5: "
-            "1 means completely irrelevant, 3 means partially addresses the "
-            "question but misses key parts, and 5 means fully and directly "
-            "answers the question. Return a JSON object with 'score' "
-            "(an integer from 1 to 5) and 'reasoning' (a brief explanation)."
+            "You are a technical RAG auditor. Evaluate how well the "
+            "generated answer addresses the user's question. Rate it from "
+            "1 to 5: 1 means completely irrelevant, 3 means partially "
+            "addresses the question but misses key parts, and 5 means "
+            "fully and directly answers the question. Return a JSON object "
+            "with 'score' (an integer from 1 to 5) and 'reasoning' "
+            "(a brief explanation). Return only a valid JSON object."
         )
 
         user_prompt = (
@@ -149,10 +261,14 @@ class RagasEvaluator:
             f"GENERATED ANSWER:\n{answer}"
         )
 
-        result = self._query_groq_judge(system_prompt, user_prompt)
+        result = self._query_groq_judge(
+            system_prompt,
+            user_prompt,
+        )
 
         if result["status"] == "success":
             score = result["score"]
+
             if (
                 isinstance(score, bool)
                 or not isinstance(score, int)
@@ -160,7 +276,10 @@ class RagasEvaluator:
             ):
                 return {
                     "score": None,
-                    "reasoning": "Invalid relevance score; expected an integer from 1 to 5.",
+                    "reasoning": (
+                        "Invalid relevance score; expected an integer "
+                        "from 1 to 5."
+                    ),
                     "status": "failed",
                 }
 
@@ -168,7 +287,7 @@ class RagasEvaluator:
 
     @staticmethod
     def _average(results: list[dict], metric: str):
-        """Average successful numeric scores only; return None if none exist."""
+        """Average successful numeric scores; return None if none exist."""
 
         scores = [
             item[metric]["score"]
@@ -179,7 +298,11 @@ class RagasEvaluator:
 
         return sum(scores) / len(scores) if scores else None
 
-    def evaluate_results_file(self, file_path: Path, output_path: Path) -> int:
+    def evaluate_results_file(
+        self,
+        file_path: Path,
+        output_path: Path,
+    ) -> int:
         """Evaluate E2E results and save scores plus evaluation status."""
 
         if not file_path.is_file():
@@ -194,18 +317,28 @@ class RagasEvaluator:
             return 1
 
         if not isinstance(data, list):
-            print("[ERROR] Input JSON must contain a list of evaluation items.")
+            print(
+                "[ERROR] Input JSON must contain a list "
+                "of evaluation items."
+            )
             return 1
 
         evaluated_data = []
-        print(f"Evaluating {len(data)} items from {file_path.name}...")
+
+        print(
+            f"Evaluating {len(data)} items from {file_path.name}..."
+        )
 
         for idx, item in enumerate(data, start=1):
             if not isinstance(item, dict):
                 print(f"[ERROR] Item {idx} must be a JSON object.")
                 return 1
 
-            required_fields = {"question", "generated_answer", "retrieved_chunks"}
+            required_fields = {
+                "question",
+                "generated_answer",
+                "retrieved_chunks",
+            }
             missing_fields = required_fields - item.keys()
 
             if missing_fields:
@@ -216,17 +349,25 @@ class RagasEvaluator:
                 return 1
 
             chunks = item["retrieved_chunks"]
+
             if not isinstance(chunks, list) or any(
-                not isinstance(chunk, dict) or not isinstance(chunk.get("text"), str)
+                not isinstance(chunk, dict)
+                or not isinstance(chunk.get("text"), str)
                 for chunk in chunks
             ):
-                print(f"[ERROR] Item {idx} has invalid retrieved_chunks.")
+                print(
+                    f"[ERROR] Item {idx} has invalid retrieved_chunks."
+                )
                 return 1
 
             question = item["question"]
             answer = item["generated_answer"]
+
             if not isinstance(question, str) or not isinstance(answer, str):
-                print(f"[ERROR] Item {idx} question and answer must be strings.")
+                print(
+                    f"[ERROR] Item {idx} question and answer "
+                    "must be strings."
+                )
                 return 1
 
             context = "\n\n---\n\n".join(
@@ -235,19 +376,28 @@ class RagasEvaluator:
 
             print(f"Auditing item {idx}/{len(data)}...")
 
-            faithfulness = self.evaluate_faithfulness(context, answer)
-            relevance = self.evaluate_relevance(question, answer)
+            faithfulness = self.evaluate_faithfulness(
+                context,
+                answer,
+            )
+            relevance = self.evaluate_relevance(
+                question,
+                answer,
+            )
 
             evaluated_item = dict(item)
             evaluated_item["faithfulness"] = faithfulness
             evaluated_item["relevance"] = relevance
+
             evaluated_data.append(evaluated_item)
 
         average_faithfulness = self._average(
-            evaluated_data, "faithfulness"
+            evaluated_data,
+            "faithfulness",
         )
         average_relevance = self._average(
-            evaluated_data, "relevance"
+            evaluated_data,
+            "relevance",
         )
 
         statuses = [
@@ -282,9 +432,18 @@ class RagasEvaluator:
         }
 
         try:
-            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.parent.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
+
             with output_path.open("w", encoding="utf-8") as file:
-                json.dump(summary, file, indent=4, ensure_ascii=False)
+                json.dump(
+                    summary,
+                    file,
+                    indent=4,
+                    ensure_ascii=False,
+                )
         except OSError as exc:
             print(f"[ERROR] Could not write output JSON: {exc}")
             return 1
@@ -298,17 +457,21 @@ class RagasEvaluator:
         if average_faithfulness is None:
             print("Average Faithfulness: N/A")
         else:
-            print(f"Average Faithfulness: {average_faithfulness:.2%}")
+            print(
+                f"Average Faithfulness: {average_faithfulness:.2%}"
+            )
 
         if average_relevance is None:
             print("Average Relevance:    N/A")
         else:
-            print(f"Average Relevance:    {average_relevance:.2f}/5")
+            print(
+                f"Average Relevance:    {average_relevance:.2f}/5"
+            )
 
         print(f"Saved results to:     {output_path}")
 
-        # Fail the process when judge requests failed, so CI does not
-        # silently treat incomplete evaluation as a successful evaluation.
+        # Nonzero exit code prevents CI from silently accepting
+        # an incomplete evaluation.
         return 1 if failed else 0
 
 
@@ -317,4 +480,9 @@ if __name__ == "__main__":
     OUTPUT_FILE = ROOT / "evaluation" / "ragas_eval_results.json"
 
     evaluator = RagasEvaluator()
-    sys.exit(evaluator.evaluate_results_file(INPUT_FILE, OUTPUT_FILE))
+    sys.exit(
+        evaluator.evaluate_results_file(
+            INPUT_FILE,
+            OUTPUT_FILE,
+        )
+    )

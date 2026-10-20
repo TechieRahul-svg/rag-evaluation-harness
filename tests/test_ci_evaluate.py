@@ -8,10 +8,14 @@ SCRIPT = Path("src/evaluation/ci_evaluate.py").resolve()
 RESULT_FILE = Path("evaluation/retrieval_results.json").resolve()
 
 
+
 def run_quality_gate(tmp_path, results):
     """Run the gate against temporary results without changing real benchmarks."""
     result_file = tmp_path / "retrieval_results.json"
-    result_file.write_text(json.dumps(results), encoding="utf-8")
+    result_file.write_text(
+        json.dumps(results),
+        encoding="utf-8",
+    )
 
     # Use a temporary copy of the script so its result path points
     # to the temporary test file, not the repository benchmark.
@@ -20,6 +24,7 @@ def run_quality_gate(tmp_path, results):
         'Path("evaluation/retrieval_results.json")',
         f'Path(r"{result_file}")',
     )
+
     test_script = tmp_path / "ci_evaluate.py"
     test_script.write_text(script_text, encoding="utf-8")
 
@@ -27,8 +32,11 @@ def run_quality_gate(tmp_path, results):
         [sys.executable, str(test_script)],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         check=False,
     )
+
 
 
 def valid_results(hit5=0.90):
