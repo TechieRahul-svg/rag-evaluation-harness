@@ -45,6 +45,10 @@ with open(QUESTIONS_FILE, encoding="utf-8") as f:
 # --------------------------------------------------
 
 client = chromadb.PersistentClient(path=DB_PATH)
+
+print(f"Vector database path: {DB_PATH}")
+print(f"Collections visible to evaluator: {client.list_collections()}")
+
 embedder = Embedder()
 
 
