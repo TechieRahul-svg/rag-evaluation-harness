@@ -1,129 +1,50 @@
+
 name: RAG Evaluation Pipeline
 
 on:
   push:
-    branches:
-      - main
-<<<<<<< HEAD
-
-=======
->>>>>>> d452489 (Modified)
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
-<<<<<<< HEAD
+permissions:
+  contents: read
 
 jobs:
-
   rag-evaluation:
-
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-
-      # ------------------------------------------------
-      # 1. Checkout repository
-      # ------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
-
-      # ------------------------------------------------
-      # 2. Setup Python
-      # ------------------------------------------------
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.txt
 
-
-      # ------------------------------------------------
-      # 3. Install dependencies
-      # ------------------------------------------------
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Validate Python syntax
+        run: python -m compileall -q src tests
 
-      # ------------------------------------------------
-      # 4. Show project structure
-      # ------------------------------------------------
-      - name: Check project files
-        run: |
-          pwd
-          ls -la
-          echo "Processed data:"
-          ls -la data/processed
+      - name: Run API smoke tests
+        run: python -m pytest -q tests/
 
+      - name: Build vector database
+        run: python src/vectorstore/build_vectorstore.py
 
-      # ------------------------------------------------
-      # 5. Build ChromaDB
-      # ------------------------------------------------
-      - name: Build Vector Database
-        run: |
-          python src/vectorstore/build_vectorstore.py
+      - name: Verify vector database
+        run: python src/vectorstore/check_vectorstore.py
 
+      - name: Run retrieval evaluation
+        run: python src/evaluation/run_retrieval_evaluation.py
 
-      # ------------------------------------------------
-      # 6. Verify ChromaDB collections
-      # ------------------------------------------------
-      - name: Verify Vector Database
-        run: |
-          python src/vectorstore/check_vectorstore.py
-
-
-      # ------------------------------------------------
-      # 7. Show ChromaDB files
-      # ------------------------------------------------
-      - name: Inspect Vector Database
-        run: |
-          echo "Vectorstore directory:"
-          find data/vectorstore -maxdepth 2 -type f | head -50
-
-
-      # ------------------------------------------------
-      # 8. Run retrieval evaluation
-      # ------------------------------------------------
-      - name: Run Retrieval Evaluation
-        run: |
-          python src/evaluation/run_retrieval_evaluation.py
-
-
-      # ------------------------------------------------
-      # 9. Check quality threshold
-      # ------------------------------------------------
-      - name: Check RAG Quality
-        run: |
-          python src/evaluation/ci_evaluate.py
-=======
-jobs:
-  rag-evaluation:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
-
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-
-    - name: Build Vector Store
-      run: |
-        python src/vectorstore/build_vectorstore.py
-
-    - name: Run RAG Evaluation
-      run: |
-        python src/evaluation/run_retrieval_evaluation.py
-
-    - name: Check Quality Threshold
-      run: |
-        python src/evaluation/ci_evaluate.py
->>>>>>> d452489 (Modified)
+      - name: Check retrieval quality threshold
+        run: python src/evaluation/ci_evaluate.py
