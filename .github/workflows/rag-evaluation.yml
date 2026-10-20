@@ -43,8 +43,25 @@ jobs:
       - name: Verify vector database
         run: python src/vectorstore/check_vectorstore.py
 
+      
       - name: Run retrieval evaluation
         run: python src/evaluation/run_retrieval_evaluation.py
 
+      - name: Run unified benchmark
+        run: python src/evaluation/run_full_benchmark.py
+
       - name: Check retrieval quality threshold
         run: python src/evaluation/ci_evaluate.py
+
+      - name: Upload benchmark results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rag-benchmark-results
+          path: |
+            evaluation/retrieval_results.json
+            evaluation/benchmark_results.json
+            evaluation/benchmark_report.csv
+          if-no-files-found: warn
+          retention-days: 14
+
